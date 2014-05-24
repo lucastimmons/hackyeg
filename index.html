@@ -1,0 +1,2308 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<style>
+* {
+		font-family: 'Open Sans', sans-serif;
+}
+#agelegenddiv  {
+	display: none;
+}
+
+#votinglegenddiv {
+	display: none;
+}
+
+#genderlegenddiv {
+	display: none;
+}
+
+.albertacount-text-block{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	width: 100%;
+	float: left;
+	margin: 0 auto;
+}
+.albertacount-text-block p{
+	color: #3f4245 !important;
+	width: 75% !important;
+	margin: 0 auto !important;
+	float: none !important;
+}
+
+.albertacount-breakdown-wrapper{
+	width: 75%;
+	margin: 30px auto 0 auto;
+}
+.albertacount-30k-people{
+	width: 562px;
+	float: left;
+	top: 5px;
+	position: relative;
+}
+.albertacount-graphic-legend{
+	float: left;
+	padding-left: 10px;
+}
+.albertacount-graphic-legend-mobile{
+	display: none;
+}
+.albertacount-graphic-legend-item{
+	border-left: 2px solid #666;
+	width: 20px;
+	overflow:visible;
+	position: relative;
+	opacity: 0;
+}
+.albertacount-graphic-legend-item-text{
+	font-size: 12px;
+	font-family: 'Open Sans', sans-serif;
+	display: inline-block;
+	width: 200px;
+	position: relative;
+	margin-left: 10px;
+	top: 39%;
+	color:#3f4245;
+}
+.alberta-person-square{
+	background-color: #C2C2C2;
+	width: 12px;
+	display: inline-block;
+	float:right;
+	height: 12px;
+	margin: 0 1px 1px 0;
+}
+
+.ajmint-icon-for-legend.alberta-person-square{
+	background-color: #666;
+	display: inline-block;
+	float: none;
+}
+
+#squareboxes .cond1,
+#squareboxes.active .albertacount-graphic-legend-item[data-legend-item="cond1"]{
+  -webkit-transition: all .5s ease-in;
+	-moz-transition: all .5s ease-in;
+	-o-transition: all .5s ease-in;
+	transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+	-moz-transition-delay: .5s;
+	-o-transition-delay: .5s;
+	transition-delay: .5s;
+}
+#squareboxes .cond2,
+#squareboxes.active .albertacount-graphic-legend-item[data-legend-item="cond2"]{
+  -webkit-transition: all .5s ease-in;
+	-moz-transition: all .5s ease-in;
+	-o-transition: all .5s ease-in;
+	transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+	-moz-transition-delay: .5s;
+	-o-transition-delay: .5s;
+	transition-delay: .5s;
+}
+#squareboxes .cond3,
+#squareboxes.active .albertacount-graphic-legend-item[data-legend-item="cond3"]{
+  -webkit-transition: all .5s ease-in;
+	-moz-transition: all .5s ease-in;
+	-o-transition: all .5s ease-in;
+	transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+	-moz-transition-delay: .5s;
+	-o-transition-delay: .5s;
+	transition-delay: .5s;
+}
+#squareboxes.active .albertacount-graphic-legend-item[data-legend-item="cond1"],
+#squareboxes.active .albertacount-graphic-legend-item[data-legend-item="cond2"],
+#squareboxes.active .albertacount-graphic-legend-item[data-legend-item="cond3"]{
+	opacity: 1;
+}
+
+
+/* COLORS TO CHANGE */
+/* Eligible poeple */
+
+
+#squareboxes.active .cond1{
+	color:white;
+	background-color: #2980b9;
+}
+#squareboxes.active .albertacount-graphic-legend-item[data-legend-item="cond1"]{
+	border-color: #2980b9;
+}
+
+/* Ineligible poeple */
+#squareboxes.active .cond2{
+	color:white;
+	background-color: #27ae60;
+}
+#squareboxes.active .albertacount-graphic-legend-item[data-legend-item="cond2"]{
+	border-color: #27ae60;
+}
+
+/* Remaining poeple */
+#squareboxes.active .cond3{
+	color:white;
+	background-color: #c0392b;
+}
+#squareboxes.active .albertacount-graphic-legend-item[data-legend-item="cond3"]{
+	border-color: #c0392b;
+}
+
+
+#squareboxes.active .zerotofouryears{
+color:white;
+background-color:#1f77b4;
+  -webkit-transition: all .5s ease-in;
+-moz-transition: all .5s ease-in;
+-o-transition: all .5s ease-in;
+transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+-moz-transition-delay: .5s;
+-o-transition-delay: .5s;
+transition-delay: .5s;
+}
+
+#squareboxes.active .fivetonineyears{
+color:white;
+background-color:#aec7e8;
+  -webkit-transition: all .5s ease-in;
+-moz-transition: all .5s ease-in;
+-o-transition: all .5s ease-in;
+transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+-moz-transition-delay: .5s;
+-o-transition-delay: .5s;
+transition-delay: .5s;
+}
+
+#squareboxes.active .tentofourteenyears{
+color:white;
+background-color:#ff7f0e;
+  -webkit-transition: all .5s ease-in;
+-moz-transition: all .5s ease-in;
+-o-transition: all .5s ease-in;
+transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+-moz-transition-delay: .5s;
+-o-transition-delay: .5s;
+transition-delay: .5s;
+}
+
+#squareboxes.active .fifteentonineteenyears{
+color:white;
+background-color:#ffbb78;
+  -webkit-transition: all .5s ease-in;
+-moz-transition: all .5s ease-in;
+-o-transition: all .5s ease-in;
+transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+-moz-transition-delay: .5s;
+-o-transition-delay: .5s;
+transition-delay: .5s;
+}
+
+#squareboxes.active .twentytotwentyfouryears{
+color:white;
+background-color:#2ca02c;
+  -webkit-transition: all .5s ease-in;
+-moz-transition: all .5s ease-in;
+-o-transition: all .5s ease-in;
+transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+-moz-transition-delay: .5s;
+-o-transition-delay: .5s;
+transition-delay: .5s;
+}
+
+#squareboxes.active .twentyfivetotwentynineyears{
+color:white;
+background-color:#98df8a;
+  -webkit-transition: all .5s ease-in;
+-moz-transition: all .5s ease-in;
+-o-transition: all .5s ease-in;
+transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+-moz-transition-delay: .5s;
+-o-transition-delay: .5s;
+transition-delay: .5s;
+}
+
+#squareboxes.active .thritytothirtyfouryears{
+color:white;
+background-color:#d62728;
+  -webkit-transition: all .5s ease-in;
+-moz-transition: all .5s ease-in;
+-o-transition: all .5s ease-in;
+transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+-moz-transition-delay: .5s;
+-o-transition-delay: .5s;
+transition-delay: .5s;
+}
+
+#squareboxes.active .thirtyfivetothirtynineyears{
+color:white;
+background-color:#ff9896;
+  -webkit-transition: all .5s ease-in;
+-moz-transition: all .5s ease-in;
+-o-transition: all .5s ease-in;
+transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+-moz-transition-delay: .5s;
+-o-transition-delay: .5s;
+transition-delay: .5s;
+}
+
+#squareboxes.active .fortytofortyfouryears{
+color:white;
+background-color:#9467bd;
+  -webkit-transition: all .5s ease-in;
+-moz-transition: all .5s ease-in;
+-o-transition: all .5s ease-in;
+transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+-moz-transition-delay: .5s;
+-o-transition-delay: .5s;
+transition-delay: .5s;
+}
+
+#squareboxes.active .fortyfivetofortynineyears{
+color:white;
+background-color:#c5b0d5;
+  -webkit-transition: all .5s ease-in;
+-moz-transition: all .5s ease-in;
+-o-transition: all .5s ease-in;
+transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+-moz-transition-delay: .5s;
+-o-transition-delay: .5s;
+transition-delay: .5s;
+}
+
+#squareboxes.active .fiftytofiftyfouryears{
+color:white;
+background-color:#8c564b;
+  -webkit-transition: all .5s ease-in;
+-moz-transition: all .5s ease-in;
+-o-transition: all .5s ease-in;
+transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+-moz-transition-delay: .5s;
+-o-transition-delay: .5s;
+transition-delay: .5s;
+}
+
+#squareboxes.active .fiftyfivetofiftynineyears{
+color:white;
+background-color:#c49c94;
+  -webkit-transition: all .5s ease-in;
+-moz-transition: all .5s ease-in;
+-o-transition: all .5s ease-in;
+transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+-moz-transition-delay: .5s;
+-o-transition-delay: .5s;
+transition-delay: .5s;
+}
+
+#squareboxes.active .sixtytosixtyfouryears{
+color:white;
+background-color:#e377c2;
+  -webkit-transition: all .5s ease-in;
+-moz-transition: all .5s ease-in;
+-o-transition: all .5s ease-in;
+transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+-moz-transition-delay: .5s;
+-o-transition-delay: .5s;
+transition-delay: .5s;
+}
+
+#squareboxes.active .sixtyfivetosixtynineyears{
+color:white;
+background-color:#f7b6d2;
+  -webkit-transition: all .5s ease-in;
+-moz-transition: all .5s ease-in;
+-o-transition: all .5s ease-in;
+transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+-moz-transition-delay: .5s;
+-o-transition-delay: .5s;
+transition-delay: .5s;
+}
+
+#squareboxes.active .seventytoseventyfouryears{
+color:white;
+background-color:#7f7f7f;
+  -webkit-transition: all .5s ease-in;
+-moz-transition: all .5s ease-in;
+-o-transition: all .5s ease-in;
+transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+-moz-transition-delay: .5s;
+-o-transition-delay: .5s;
+transition-delay: .5s;
+}
+
+#squareboxes.active .seventyfivetoseventynineyears{
+color:white;
+background-color:#c7c7c7;
+  -webkit-transition: all .5s ease-in;
+-moz-transition: all .5s ease-in;
+-o-transition: all .5s ease-in;
+transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+-moz-transition-delay: .5s;
+-o-transition-delay: .5s;
+transition-delay: .5s;
+}
+
+#squareboxes.active .eightytoeightyfouryears{
+color:white;
+background-color:#bcbd22;
+  -webkit-transition: all .5s ease-in;
+-moz-transition: all .5s ease-in;
+-o-transition: all .5s ease-in;
+transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+-moz-transition-delay: .5s;
+-o-transition-delay: .5s;
+transition-delay: .5s;
+}
+
+#squareboxes.active .eightyfiveyearsandover{
+color:white;
+background-color:#dbdb8d;
+  -webkit-transition: all .5s ease-in;
+-moz-transition: all .5s ease-in;
+-o-transition: all .5s ease-in;
+transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+-moz-transition-delay: .5s;
+-o-transition-delay: .5s;
+transition-delay: .5s;
+}
+
+
+/* SET STYLERS FOR SELECTIONS HERE */
+
+
+
+#squareboxes.active .doniveson{
+color:white;
+background-color:#1f77b4;
+  -webkit-transition: all .5s ease-in;
+-moz-transition: all .5s ease-in;
+-o-transition: all .5s ease-in;
+transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+-moz-transition-delay: .5s;
+-o-transition-delay: .5s;
+transition-delay: .5s;
+}
+
+#squareboxes.active .karenleibovivi{
+color:white;
+background-color:#aec7e8;
+  -webkit-transition: all .5s ease-in;
+-moz-transition: all .5s ease-in;
+-o-transition: all .5s ease-in;
+transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+-moz-transition-delay: .5s;
+-o-transition-delay: .5s;
+transition-delay: .5s;
+}
+
+#squareboxes.active .kerrydiotte{
+color:white;
+background-color:#ff7f0e;
+  -webkit-transition: all .5s ease-in;
+-moz-transition: all .5s ease-in;
+-o-transition: all .5s ease-in;
+transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+-moz-transition-delay: .5s;
+-o-transition-delay: .5s;
+transition-delay: .5s;
+}
+
+#squareboxes.active .joshsemotiuk{
+color:white;
+background-color:#ffbb78;
+  -webkit-transition: all .5s ease-in;
+-moz-transition: all .5s ease-in;
+-o-transition: all .5s ease-in;
+transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+-moz-transition-delay: .5s;
+-o-transition-delay: .5s;
+transition-delay: .5s;
+}
+
+#squareboxes.active .gordonward{
+color:white;
+background-color:#2ca02c;
+  -webkit-transition: all .5s ease-in;
+-moz-transition: all .5s ease-in;
+-o-transition: all .5s ease-in;
+transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+-moz-transition-delay: .5s;
+-o-transition-delay: .5s;
+transition-delay: .5s;
+}
+
+#squareboxes.active .kristineacielo{
+color:white;
+background-color:#98df8a;
+  -webkit-transition: all .5s ease-in;
+-moz-transition: all .5s ease-in;
+-o-transition: all .5s ease-in;
+transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+-moz-transition-delay: .5s;
+-o-transition-delay: .5s;
+transition-delay: .5s;
+}
+
+#squareboxes.active .undervotes{
+color:white;
+background-color:#d62728;
+  -webkit-transition: all .5s ease-in;
+-moz-transition: all .5s ease-in;
+-o-transition: all .5s ease-in;
+transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+-moz-transition-delay: .5s;
+-o-transition-delay: .5s;
+transition-delay: .5s;
+}
+
+#squareboxes.active .didntvote{
+color:white;
+background-color:#ff9896;
+  -webkit-transition: all .5s ease-in;
+-moz-transition: all .5s ease-in;
+-o-transition: all .5s ease-in;
+transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+-moz-transition-delay: .5s;
+-o-transition-delay: .5s;
+transition-delay: .5s;
+}
+
+@-webkit-keyframes pulse_animation {
+	0% { -webkit-transform: scale(1.7); }
+	30% { -webkit-transform: scale(1.6); }
+	40% { -webkit-transform: scale(1.5); }
+	50% { -webkit-transform: scale(1.4); }
+	60% { -webkit-transform: scale(1.3); }
+	70% { -webkit-transform: scale(1.2); }
+	80% { -webkit-transform: scale(1.1); }
+	100% { -webkit-transform: scale(1); }
+}
+
+@-webkit-keyframes spin_animation {
+	0% { -webkit-transform: rotateX(0deg); }
+	0% { -webkit-transform: rotateX(18deg); }
+	0% { -webkit-transform: rotateX(38deg); }
+	30% { -webkit-transform: rotateX(54deg); }
+	40% { -webkit-transform: rotateX(72deg); }
+	50% { -webkit-transform: rotateX(90deg); }
+	60% { -webkit-transform: rotateX(108deg); }
+	70% { -webkit-transform: rotateX(126deg); }
+	80% { -webkit-transform: rotateX(144deg); }
+	0% { -webkit-transform: rotateX(162deg); }
+	100% { -webkit-transform: rotateX(180deg); }
+}
+
+
+#squareboxes.active .test1{
+	color:white;
+	background-color: blue;
+  -webkit-transition: all .5s ease-in;
+	-moz-transition: all .5s ease-in;
+	-o-transition: all .5s ease-in;
+	transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+	-moz-transition-delay: .5s;
+	-o-transition-delay: .5s;
+	transition-delay: .5s;
+}
+#squareboxes.active .test2{
+	color:white;
+	background-color: #34495e;
+  -webkit-transition: all .5s ease-in;
+	-moz-transition: all .5s ease-in;
+	-o-transition: all .5s ease-in;
+	transition: all .5s ease-in;
+  -webkit-transition-delay: .5s;
+	-moz-transition-delay: .5s;
+	-o-transition-delay: .5s;
+	transition-delay: .5s;
+}
+
+.btn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: 'Open Sans', sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  border: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+
+</style>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<body>
+<div id="squareboxes" class="active" style="z-index: 197;">
+                <div class="albertacount-text-block">
+                    <p><span class="ajmint-icon-for-legend alberta-person-square"></span> = Approx. <span id="albertacount-legend-person-value">500</span> Edmontonians.</p>
+                </div>
+                <div class="albertacount-breakdown-wrapper">
+                    <div class="albertacount-graphic albertacount-30k-people" style="display: block;">
+<div class="alberta-person-square cond1" id="s1"></div>
+<div class="alberta-person-square cond1" id="s2"></div>
+<div class="alberta-person-square cond1" id="s3"></div>
+<div class="alberta-person-square cond1" id="s4"></div>
+<div class="alberta-person-square cond1" id="s5"></div>
+<div class="alberta-person-square cond1" id="s6"></div>
+<div class="alberta-person-square cond1" id="s7"></div>
+<div class="alberta-person-square cond1" id="s8"></div>
+<div class="alberta-person-square cond1" id="s9"></div>
+<div class="alberta-person-square cond1" id="s10"></div>
+<div class="alberta-person-square cond1" id="s11"></div>
+<div class="alberta-person-square cond1" id="s12"></div>
+<div class="alberta-person-square cond1" id="s13"></div>
+<div class="alberta-person-square cond1" id="s14"></div>
+<div class="alberta-person-square cond1" id="s15"></div>
+<div class="alberta-person-square cond1" id="s16"></div>
+<div class="alberta-person-square cond1" id="s17"></div>
+<div class="alberta-person-square cond1" id="s18"></div>
+<div class="alberta-person-square cond1" id="s19"></div>
+<div class="alberta-person-square cond1" id="s20"></div>
+<div class="alberta-person-square cond1" id="s21"></div>
+<div class="alberta-person-square cond1" id="s22"></div>
+<div class="alberta-person-square cond1" id="s23"></div>
+<div class="alberta-person-square cond1" id="s24"></div>
+<div class="alberta-person-square cond1" id="s25"></div>
+<div class="alberta-person-square cond1" id="s26"></div>
+<div class="alberta-person-square cond1" id="s27"></div>
+<div class="alberta-person-square cond1" id="s28"></div>
+<div class="alberta-person-square cond1" id="s29"></div>
+<div class="alberta-person-square cond1" id="s30"></div>
+<div class="alberta-person-square cond1" id="s31"></div>
+<div class="alberta-person-square cond1" id="s32"></div>
+<div class="alberta-person-square cond1" id="s33"></div>
+<div class="alberta-person-square cond1" id="s34"></div>
+<div class="alberta-person-square cond1" id="s35"></div>
+<div class="alberta-person-square cond1" id="s36"></div>
+<div class="alberta-person-square cond1" id="s37"></div>
+<div class="alberta-person-square cond1" id="s38"></div>
+<div class="alberta-person-square cond1" id="s39"></div>
+<div class="alberta-person-square cond1" id="s40"></div>
+<div class="alberta-person-square cond1" id="s41"></div>
+<div class="alberta-person-square cond1" id="s42"></div>
+<div class="alberta-person-square cond1" id="s43"></div>
+<div class="alberta-person-square cond1" id="s44"></div>
+<div class="alberta-person-square cond1" id="s45"></div>
+<div class="alberta-person-square cond1" id="s46"></div>
+<div class="alberta-person-square cond1" id="s47"></div>
+<div class="alberta-person-square cond1" id="s48"></div>
+<div class="alberta-person-square cond1" id="s49"></div>
+<div class="alberta-person-square cond1" id="s50"></div>
+<div class="alberta-person-square cond1" id="s51"></div>
+<div class="alberta-person-square cond1" id="s52"></div>
+<div class="alberta-person-square cond1" id="s53"></div>
+<div class="alberta-person-square cond1" id="s54"></div>
+<div class="alberta-person-square cond1" id="s55"></div>
+<div class="alberta-person-square cond1" id="s56"></div>
+<div class="alberta-person-square cond1" id="s57"></div>
+<div class="alberta-person-square cond1" id="s58"></div>
+<div class="alberta-person-square cond1" id="s59"></div>
+<div class="alberta-person-square cond1" id="s60"></div>
+<div class="alberta-person-square cond1" id="s61"></div>
+<div class="alberta-person-square cond1" id="s62"></div>
+<div class="alberta-person-square cond1" id="s63"></div>
+<div class="alberta-person-square cond1" id="s64"></div>
+<div class="alberta-person-square cond1" id="s65"></div>
+<div class="alberta-person-square cond1" id="s66"></div>
+<div class="alberta-person-square cond1" id="s67"></div>
+<div class="alberta-person-square cond1" id="s68"></div>
+<div class="alberta-person-square cond1" id="s69"></div>
+<div class="alberta-person-square cond1" id="s70"></div>
+<div class="alberta-person-square cond1" id="s71"></div>
+<div class="alberta-person-square cond1" id="s72"></div>
+<div class="alberta-person-square cond1" id="s73"></div>
+<div class="alberta-person-square cond1" id="s74"></div>
+<div class="alberta-person-square cond1" id="s75"></div>
+<div class="alberta-person-square cond1" id="s76"></div>
+<div class="alberta-person-square cond1" id="s77"></div>
+<div class="alberta-person-square cond1" id="s78"></div>
+<div class="alberta-person-square cond1" id="s79"></div>
+<div class="alberta-person-square cond1" id="s80"></div>
+<div class="alberta-person-square cond1" id="s81"></div>
+<div class="alberta-person-square cond1" id="s82"></div>
+<div class="alberta-person-square cond1" id="s83"></div>
+<div class="alberta-person-square cond1" id="s84"></div>
+<div class="alberta-person-square cond1" id="s85"></div>
+<div class="alberta-person-square cond1" id="s86"></div>
+<div class="alberta-person-square cond1" id="s87"></div>
+<div class="alberta-person-square cond1" id="s88"></div>
+<div class="alberta-person-square cond1" id="s89"></div>
+<div class="alberta-person-square cond1" id="s90"></div>
+<div class="alberta-person-square cond1" id="s91"></div>
+<div class="alberta-person-square cond1" id="s92"></div>
+<div class="alberta-person-square cond1" id="s93"></div>
+<div class="alberta-person-square cond1" id="s94"></div>
+<div class="alberta-person-square cond1" id="s95"></div>
+<div class="alberta-person-square cond1" id="s96"></div>
+<div class="alberta-person-square cond1" id="s97"></div>
+<div class="alberta-person-square cond1" id="s98"></div>
+<div class="alberta-person-square cond1" id="s99"></div>
+<div class="alberta-person-square cond1" id="s100"></div>
+<div class="alberta-person-square cond1" id="s101"></div>
+<div class="alberta-person-square cond1" id="s102"></div>
+<div class="alberta-person-square cond1" id="s103"></div>
+<div class="alberta-person-square cond1" id="s104"></div>
+<div class="alberta-person-square cond1" id="s105"></div>
+<div class="alberta-person-square cond1" id="s106"></div>
+<div class="alberta-person-square cond1" id="s107"></div>
+<div class="alberta-person-square cond1" id="s108"></div>
+<div class="alberta-person-square cond1" id="s109"></div>
+<div class="alberta-person-square cond1" id="s110"></div>
+<div class="alberta-person-square cond1" id="s111"></div>
+<div class="alberta-person-square cond1" id="s112"></div>
+<div class="alberta-person-square cond1" id="s113"></div>
+<div class="alberta-person-square cond1" id="s114"></div>
+<div class="alberta-person-square cond1" id="s115"></div>
+<div class="alberta-person-square cond1" id="s116"></div>
+<div class="alberta-person-square cond1" id="s117"></div>
+<div class="alberta-person-square cond1" id="s118"></div>
+<div class="alberta-person-square cond1" id="s119"></div>
+<div class="alberta-person-square cond1" id="s120"></div>
+<div class="alberta-person-square cond1" id="s121"></div>
+<div class="alberta-person-square cond1" id="s122"></div>
+<div class="alberta-person-square cond1" id="s123"></div>
+<div class="alberta-person-square cond1" id="s124"></div>
+<div class="alberta-person-square cond1" id="s125"></div>
+<div class="alberta-person-square cond1" id="s126"></div>
+<div class="alberta-person-square cond1" id="s127"></div>
+<div class="alberta-person-square cond1" id="s128"></div>
+<div class="alberta-person-square cond1" id="s129"></div>
+<div class="alberta-person-square cond1" id="s130"></div>
+<div class="alberta-person-square cond1" id="s131"></div>
+<div class="alberta-person-square cond1" id="s132"></div>
+<div class="alberta-person-square cond1" id="s133"></div>
+<div class="alberta-person-square cond1" id="s134"></div>
+<div class="alberta-person-square cond1" id="s135"></div>
+<div class="alberta-person-square cond1" id="s136"></div>
+<div class="alberta-person-square cond1" id="s137"></div>
+<div class="alberta-person-square cond1" id="s138"></div>
+<div class="alberta-person-square cond1" id="s139"></div>
+<div class="alberta-person-square cond1" id="s140"></div>
+<div class="alberta-person-square cond1" id="s141"></div>
+<div class="alberta-person-square cond1" id="s142"></div>
+<div class="alberta-person-square cond1" id="s143"></div>
+<div class="alberta-person-square cond1" id="s144"></div>
+<div class="alberta-person-square cond1" id="s145"></div>
+<div class="alberta-person-square cond1" id="s146"></div>
+<div class="alberta-person-square cond1" id="s147"></div>
+<div class="alberta-person-square cond1" id="s148"></div>
+<div class="alberta-person-square cond1" id="s149"></div>
+<div class="alberta-person-square cond1" id="s150"></div>
+<div class="alberta-person-square cond1" id="s151"></div>
+<div class="alberta-person-square cond1" id="s152"></div>
+<div class="alberta-person-square cond1" id="s153"></div>
+<div class="alberta-person-square cond1" id="s154"></div>
+<div class="alberta-person-square cond1" id="s155"></div>
+<div class="alberta-person-square cond1" id="s156"></div>
+<div class="alberta-person-square cond1" id="s157"></div>
+<div class="alberta-person-square cond1" id="s158"></div>
+<div class="alberta-person-square cond1" id="s159"></div>
+<div class="alberta-person-square cond1" id="s160"></div>
+<div class="alberta-person-square cond1" id="s161"></div>
+<div class="alberta-person-square cond1" id="s162"></div>
+<div class="alberta-person-square cond1" id="s163"></div>
+<div class="alberta-person-square cond1" id="s164"></div>
+<div class="alberta-person-square cond1" id="s165"></div>
+<div class="alberta-person-square cond1" id="s166"></div>
+<div class="alberta-person-square cond1" id="s167"></div>
+<div class="alberta-person-square cond1" id="s168"></div>
+<div class="alberta-person-square cond1" id="s169"></div>
+<div class="alberta-person-square cond1" id="s170"></div>
+<div class="alberta-person-square cond1" id="s171"></div>
+<div class="alberta-person-square cond1" id="s172"></div>
+<div class="alberta-person-square cond1" id="s173"></div>
+<div class="alberta-person-square cond1" id="s174"></div>
+<div class="alberta-person-square cond1" id="s175"></div>
+<div class="alberta-person-square cond1" id="s176"></div>
+<div class="alberta-person-square cond1" id="s177"></div>
+<div class="alberta-person-square cond1" id="s178"></div>
+<div class="alberta-person-square cond1" id="s179"></div>
+<div class="alberta-person-square cond1" id="s180"></div>
+<div class="alberta-person-square cond1" id="s181"></div>
+<div class="alberta-person-square cond1" id="s182"></div>
+<div class="alberta-person-square cond1" id="s183"></div>
+<div class="alberta-person-square cond1" id="s184"></div>
+<div class="alberta-person-square cond1" id="s185"></div>
+<div class="alberta-person-square cond1" id="s186"></div>
+<div class="alberta-person-square cond1" id="s187"></div>
+<div class="alberta-person-square cond1" id="s188"></div>
+<div class="alberta-person-square cond1" id="s189"></div>
+<div class="alberta-person-square cond1" id="s190"></div>
+<div class="alberta-person-square cond1" id="s191"></div>
+<div class="alberta-person-square cond1" id="s192"></div>
+<div class="alberta-person-square cond1" id="s193"></div>
+<div class="alberta-person-square cond1" id="s194"></div>
+<div class="alberta-person-square cond1" id="s195"></div>
+<div class="alberta-person-square cond1" id="s196"></div>
+<div class="alberta-person-square cond1" id="s197"></div>
+<div class="alberta-person-square cond1" id="s198"></div>
+<div class="alberta-person-square cond1" id="s199"></div>
+<div class="alberta-person-square cond1" id="s200"></div>
+<div class="alberta-person-square cond1" id="s201"></div>
+<div class="alberta-person-square cond1" id="s202"></div>
+<div class="alberta-person-square cond1" id="s203"></div>
+<div class="alberta-person-square cond1" id="s204"></div>
+<div class="alberta-person-square cond1" id="s205"></div>
+<div class="alberta-person-square cond1" id="s206"></div>
+<div class="alberta-person-square cond1" id="s207"></div>
+<div class="alberta-person-square cond1" id="s208"></div>
+<div class="alberta-person-square cond1" id="s209"></div>
+<div class="alberta-person-square cond1" id="s210"></div>
+<div class="alberta-person-square cond1" id="s211"></div>
+<div class="alberta-person-square cond1" id="s212"></div>
+<div class="alberta-person-square cond1" id="s213"></div>
+<div class="alberta-person-square cond1" id="s214"></div>
+<div class="alberta-person-square cond1" id="s215"></div>
+<div class="alberta-person-square cond1" id="s216"></div>
+<div class="alberta-person-square cond1" id="s217"></div>
+<div class="alberta-person-square cond1" id="s218"></div>
+<div class="alberta-person-square cond1" id="s219"></div>
+<div class="alberta-person-square cond1" id="s220"></div>
+<div class="alberta-person-square cond1" id="s221"></div>
+<div class="alberta-person-square cond1" id="s222"></div>
+<div class="alberta-person-square cond1" id="s223"></div>
+<div class="alberta-person-square cond1" id="s224"></div>
+<div class="alberta-person-square cond1" id="s225"></div>
+<div class="alberta-person-square cond1" id="s226"></div>
+<div class="alberta-person-square cond1" id="s227"></div>
+<div class="alberta-person-square cond1" id="s228"></div>
+<div class="alberta-person-square cond1" id="s229"></div>
+<div class="alberta-person-square cond1" id="s230"></div>
+<div class="alberta-person-square cond1" id="s231"></div>
+<div class="alberta-person-square cond1" id="s232"></div>
+<div class="alberta-person-square cond1" id="s233"></div>
+<div class="alberta-person-square cond1" id="s234"></div>
+<div class="alberta-person-square cond1" id="s235"></div>
+<div class="alberta-person-square cond1" id="s236"></div>
+<div class="alberta-person-square cond1" id="s237"></div>
+<div class="alberta-person-square cond1" id="s238"></div>
+<div class="alberta-person-square cond1" id="s239"></div>
+<div class="alberta-person-square cond1" id="s240"></div>
+<div class="alberta-person-square cond1" id="s241"></div>
+<div class="alberta-person-square cond1" id="s242"></div>
+<div class="alberta-person-square cond1" id="s243"></div>
+<div class="alberta-person-square cond1" id="s244"></div>
+<div class="alberta-person-square cond1" id="s245"></div>
+<div class="alberta-person-square cond1" id="s246"></div>
+<div class="alberta-person-square cond1" id="s247"></div>
+<div class="alberta-person-square cond1" id="s248"></div>
+<div class="alberta-person-square cond1" id="s249"></div>
+<div class="alberta-person-square cond1" id="s250"></div>
+<div class="alberta-person-square cond1" id="s251"></div>
+<div class="alberta-person-square cond1" id="s252"></div>
+<div class="alberta-person-square cond1" id="s253"></div>
+<div class="alberta-person-square cond1" id="s254"></div>
+<div class="alberta-person-square cond1" id="s255"></div>
+<div class="alberta-person-square cond1" id="s256"></div>
+<div class="alberta-person-square cond1" id="s257"></div>
+<div class="alberta-person-square cond1" id="s258"></div>
+<div class="alberta-person-square cond1" id="s259"></div>
+<div class="alberta-person-square cond1" id="s260"></div>
+<div class="alberta-person-square cond1" id="s261"></div>
+<div class="alberta-person-square cond1" id="s262"></div>
+<div class="alberta-person-square cond1" id="s263"></div>
+<div class="alberta-person-square cond1" id="s264"></div>
+<div class="alberta-person-square cond1" id="s265"></div>
+<div class="alberta-person-square cond1" id="s266"></div>
+<div class="alberta-person-square cond1" id="s267"></div>
+<div class="alberta-person-square cond1" id="s268"></div>
+<div class="alberta-person-square cond1" id="s269"></div>
+<div class="alberta-person-square cond1" id="s270"></div>
+<div class="alberta-person-square cond1" id="s271"></div>
+<div class="alberta-person-square cond1" id="s272"></div>
+<div class="alberta-person-square cond1" id="s273"></div>
+<div class="alberta-person-square cond1" id="s274"></div>
+<div class="alberta-person-square cond1" id="s275"></div>
+<div class="alberta-person-square cond1" id="s276"></div>
+<div class="alberta-person-square cond1" id="s277"></div>
+<div class="alberta-person-square cond1" id="s278"></div>
+<div class="alberta-person-square cond1" id="s279"></div>
+<div class="alberta-person-square cond1" id="s280"></div>
+<div class="alberta-person-square cond1" id="s281"></div>
+<div class="alberta-person-square cond1" id="s282"></div>
+<div class="alberta-person-square cond1" id="s283"></div>
+<div class="alberta-person-square cond1" id="s284"></div>
+<div class="alberta-person-square cond1" id="s285"></div>
+<div class="alberta-person-square cond1" id="s286"></div>
+<div class="alberta-person-square cond1" id="s287"></div>
+<div class="alberta-person-square cond1" id="s288"></div>
+<div class="alberta-person-square cond1" id="s289"></div>
+<div class="alberta-person-square cond1" id="s290"></div>
+<div class="alberta-person-square cond1" id="s291"></div>
+<div class="alberta-person-square cond1" id="s292"></div>
+<div class="alberta-person-square cond1" id="s293"></div>
+<div class="alberta-person-square cond1" id="s294"></div>
+<div class="alberta-person-square cond1" id="s295"></div>
+<div class="alberta-person-square cond1" id="s296"></div>
+<div class="alberta-person-square cond1" id="s297"></div>
+<div class="alberta-person-square cond1" id="s298"></div>
+<div class="alberta-person-square cond1" id="s299"></div>
+<div class="alberta-person-square cond1" id="s300"></div>
+<div class="alberta-person-square cond1" id="s301"></div>
+<div class="alberta-person-square cond1" id="s302"></div>
+<div class="alberta-person-square cond1" id="s303"></div>
+<div class="alberta-person-square cond1" id="s304"></div>
+<div class="alberta-person-square cond1" id="s305"></div>
+<div class="alberta-person-square cond1" id="s306"></div>
+<div class="alberta-person-square cond1" id="s307"></div>
+<div class="alberta-person-square cond1" id="s308"></div>
+<div class="alberta-person-square cond1" id="s309"></div>
+<div class="alberta-person-square cond1" id="s310"></div>
+<div class="alberta-person-square cond1" id="s311"></div>
+<div class="alberta-person-square cond1" id="s312"></div>
+<div class="alberta-person-square cond1" id="s313"></div>
+<div class="alberta-person-square cond1" id="s314"></div>
+<div class="alberta-person-square cond1" id="s315"></div>
+<div class="alberta-person-square cond1" id="s316"></div>
+<div class="alberta-person-square cond1" id="s317"></div>
+<div class="alberta-person-square cond1" id="s318"></div>
+<div class="alberta-person-square cond1" id="s319"></div>
+<div class="alberta-person-square cond1" id="s320"></div>
+<div class="alberta-person-square cond1" id="s321"></div>
+<div class="alberta-person-square cond1" id="s322"></div>
+<div class="alberta-person-square cond1" id="s323"></div>
+<div class="alberta-person-square cond1" id="s324"></div>
+<div class="alberta-person-square cond1" id="s325"></div>
+<div class="alberta-person-square cond1" id="s326"></div>
+<div class="alberta-person-square cond1" id="s327"></div>
+<div class="alberta-person-square cond1" id="s328"></div>
+<div class="alberta-person-square cond1" id="s329"></div>
+<div class="alberta-person-square cond1" id="s330"></div>
+<div class="alberta-person-square cond1" id="s331"></div>
+<div class="alberta-person-square cond1" id="s332"></div>
+<div class="alberta-person-square cond1" id="s333"></div>
+<div class="alberta-person-square cond1" id="s334"></div>
+<div class="alberta-person-square cond1" id="s335"></div>
+<div class="alberta-person-square cond1" id="s336"></div>
+<div class="alberta-person-square cond1" id="s337"></div>
+<div class="alberta-person-square cond1" id="s338"></div>
+<div class="alberta-person-square cond1" id="s339"></div>
+<div class="alberta-person-square cond1" id="s340"></div>
+<div class="alberta-person-square cond1" id="s341"></div>
+<div class="alberta-person-square cond1" id="s342"></div>
+<div class="alberta-person-square cond1" id="s343"></div>
+<div class="alberta-person-square cond1" id="s344"></div>
+<div class="alberta-person-square cond1" id="s345"></div>
+<div class="alberta-person-square cond1" id="s346"></div>
+<div class="alberta-person-square cond1" id="s347"></div>
+<div class="alberta-person-square cond1" id="s348"></div>
+<div class="alberta-person-square cond1" id="s349"></div>
+<div class="alberta-person-square cond1" id="s350"></div>
+<div class="alberta-person-square cond1" id="s351"></div>
+<div class="alberta-person-square cond1" id="s352"></div>
+<div class="alberta-person-square cond1" id="s353"></div>
+<div class="alberta-person-square cond1" id="s354"></div>
+<div class="alberta-person-square cond1" id="s355"></div>
+<div class="alberta-person-square cond1" id="s356"></div>
+<div class="alberta-person-square cond1" id="s357"></div>
+<div class="alberta-person-square cond1" id="s358"></div>
+<div class="alberta-person-square cond1" id="s359"></div>
+<div class="alberta-person-square cond1" id="s360"></div>
+<div class="alberta-person-square cond1" id="s361"></div>
+<div class="alberta-person-square cond1" id="s362"></div>
+<div class="alberta-person-square cond1" id="s363"></div>
+<div class="alberta-person-square cond1" id="s364"></div>
+<div class="alberta-person-square cond1" id="s365"></div>
+<div class="alberta-person-square cond1" id="s366"></div>
+<div class="alberta-person-square cond1" id="s367"></div>
+<div class="alberta-person-square cond1" id="s368"></div>
+<div class="alberta-person-square cond1" id="s369"></div>
+<div class="alberta-person-square cond1" id="s370"></div>
+<div class="alberta-person-square cond1" id="s371"></div>
+<div class="alberta-person-square cond1" id="s372"></div>
+<div class="alberta-person-square cond1" id="s373"></div>
+<div class="alberta-person-square cond1" id="s374"></div>
+<div class="alberta-person-square cond1" id="s375"></div>
+<div class="alberta-person-square cond1" id="s376"></div>
+<div class="alberta-person-square cond1" id="s377"></div>
+<div class="alberta-person-square cond1" id="s378"></div>
+<div class="alberta-person-square cond1" id="s379"></div>
+<div class="alberta-person-square cond1" id="s380"></div>
+<div class="alberta-person-square cond1" id="s381"></div>
+<div class="alberta-person-square cond1" id="s382"></div>
+<div class="alberta-person-square cond1" id="s383"></div>
+<div class="alberta-person-square cond1" id="s384"></div>
+<div class="alberta-person-square cond1" id="s385"></div>
+<div class="alberta-person-square cond1" id="s386"></div>
+<div class="alberta-person-square cond1" id="s387"></div>
+<div class="alberta-person-square cond1" id="s388"></div>
+<div class="alberta-person-square cond1" id="s389"></div>
+<div class="alberta-person-square cond1" id="s390"></div>
+<div class="alberta-person-square cond1" id="s391"></div>
+<div class="alberta-person-square cond1" id="s392"></div>
+<div class="alberta-person-square cond1" id="s393"></div>
+<div class="alberta-person-square cond1" id="s394"></div>
+<div class="alberta-person-square cond1" id="s395"></div>
+<div class="alberta-person-square cond1" id="s396"></div>
+<div class="alberta-person-square cond1" id="s397"></div>
+<div class="alberta-person-square cond1" id="s398"></div>
+<div class="alberta-person-square cond1" id="s399"></div>
+<div class="alberta-person-square cond1" id="s400"></div>
+<div class="alberta-person-square cond1" id="s401"></div>
+<div class="alberta-person-square cond1" id="s402"></div>
+<div class="alberta-person-square cond1" id="s403"></div>
+<div class="alberta-person-square cond1" id="s404"></div>
+<div class="alberta-person-square cond1" id="s405"></div>
+<div class="alberta-person-square cond1" id="s406"></div>
+<div class="alberta-person-square cond1" id="s407"></div>
+<div class="alberta-person-square cond1" id="s408"></div>
+<div class="alberta-person-square cond1" id="s409"></div>
+<div class="alberta-person-square cond1" id="s410"></div>
+<div class="alberta-person-square cond1" id="s411"></div>
+<div class="alberta-person-square cond1" id="s412"></div>
+<div class="alberta-person-square cond1" id="s413"></div>
+<div class="alberta-person-square cond1" id="s414"></div>
+<div class="alberta-person-square cond1" id="s415"></div>
+<div class="alberta-person-square cond1" id="s416"></div>
+<div class="alberta-person-square cond1" id="s417"></div>
+<div class="alberta-person-square cond1" id="s418"></div>
+<div class="alberta-person-square cond1" id="s419"></div>
+<div class="alberta-person-square cond1" id="s420"></div>
+<div class="alberta-person-square cond1" id="s421"></div>
+<div class="alberta-person-square cond1" id="s422"></div>
+<div class="alberta-person-square cond1" id="s423"></div>
+<div class="alberta-person-square cond1" id="s424"></div>
+<div class="alberta-person-square cond1" id="s425"></div>
+<div class="alberta-person-square cond1" id="s426"></div>
+<div class="alberta-person-square cond1" id="s427"></div>
+<div class="alberta-person-square cond1" id="s428"></div>
+<div class="alberta-person-square cond1" id="s429"></div>
+<div class="alberta-person-square cond1" id="s430"></div>
+<div class="alberta-person-square cond1" id="s431"></div>
+<div class="alberta-person-square cond1" id="s432"></div>
+<div class="alberta-person-square cond1" id="s433"></div>
+<div class="alberta-person-square cond1" id="s434"></div>
+<div class="alberta-person-square cond1" id="s435"></div>
+<div class="alberta-person-square cond1" id="s436"></div>
+<div class="alberta-person-square cond1" id="s437"></div>
+<div class="alberta-person-square cond1" id="s438"></div>
+<div class="alberta-person-square cond1" id="s439"></div>
+<div class="alberta-person-square cond1" id="s440"></div>
+<div class="alberta-person-square cond1" id="s441"></div>
+<div class="alberta-person-square cond1" id="s442"></div>
+<div class="alberta-person-square cond1" id="s443"></div>
+<div class="alberta-person-square cond1" id="s444"></div>
+<div class="alberta-person-square cond1" id="s445"></div>
+<div class="alberta-person-square cond1" id="s446"></div>
+<div class="alberta-person-square cond1" id="s447"></div>
+<div class="alberta-person-square cond1" id="s448"></div>
+<div class="alberta-person-square cond1" id="s449"></div>
+<div class="alberta-person-square cond1" id="s450"></div>
+<div class="alberta-person-square cond1" id="s451"></div>
+<div class="alberta-person-square cond1" id="s452"></div>
+<div class="alberta-person-square cond1" id="s453"></div>
+<div class="alberta-person-square cond1" id="s454"></div>
+<div class="alberta-person-square cond1" id="s455"></div>
+<div class="alberta-person-square cond1" id="s456"></div>
+<div class="alberta-person-square cond1" id="s457"></div>
+<div class="alberta-person-square cond1" id="s458"></div>
+<div class="alberta-person-square cond1" id="s459"></div>
+<div class="alberta-person-square cond1" id="s460"></div>
+<div class="alberta-person-square cond1" id="s461"></div>
+<div class="alberta-person-square cond1" id="s462"></div>
+<div class="alberta-person-square cond1" id="s463"></div>
+<div class="alberta-person-square cond1" id="s464"></div>
+<div class="alberta-person-square cond1" id="s465"></div>
+<div class="alberta-person-square cond1" id="s466"></div>
+<div class="alberta-person-square cond1" id="s467"></div>
+<div class="alberta-person-square cond1" id="s468"></div>
+<div class="alberta-person-square cond1" id="s469"></div>
+<div class="alberta-person-square cond1" id="s470"></div>
+<div class="alberta-person-square cond1" id="s471"></div>
+<div class="alberta-person-square cond1" id="s472"></div>
+<div class="alberta-person-square cond1" id="s473"></div>
+<div class="alberta-person-square cond1" id="s474"></div>
+<div class="alberta-person-square cond1" id="s475"></div>
+<div class="alberta-person-square cond1" id="s476"></div>
+<div class="alberta-person-square cond1" id="s477"></div>
+<div class="alberta-person-square cond1" id="s478"></div>
+<div class="alberta-person-square cond1" id="s479"></div>
+<div class="alberta-person-square cond1" id="s480"></div>
+<div class="alberta-person-square cond1" id="s481"></div>
+<div class="alberta-person-square cond1" id="s482"></div>
+<div class="alberta-person-square cond1" id="s483"></div>
+<div class="alberta-person-square cond1" id="s484"></div>
+<div class="alberta-person-square cond1" id="s485"></div>
+<div class="alberta-person-square cond1" id="s486"></div>
+<div class="alberta-person-square cond1" id="s487"></div>
+<div class="alberta-person-square cond1" id="s488"></div>
+<div class="alberta-person-square cond1" id="s489"></div>
+<div class="alberta-person-square cond1" id="s490"></div>
+<div class="alberta-person-square cond1" id="s491"></div>
+<div class="alberta-person-square cond1" id="s492"></div>
+<div class="alberta-person-square cond1" id="s493"></div>
+<div class="alberta-person-square cond1" id="s494"></div>
+<div class="alberta-person-square cond1" id="s495"></div>
+<div class="alberta-person-square cond1" id="s496"></div>
+<div class="alberta-person-square cond1" id="s497"></div>
+<div class="alberta-person-square cond1" id="s498"></div>
+<div class="alberta-person-square cond1" id="s499"></div>
+<div class="alberta-person-square cond1" id="s500"></div>
+<div class="alberta-person-square cond1" id="s501"></div>
+<div class="alberta-person-square cond1" id="s502"></div>
+<div class="alberta-person-square cond1" id="s503"></div>
+<div class="alberta-person-square cond1" id="s504"></div>
+<div class="alberta-person-square cond1" id="s505"></div>
+<div class="alberta-person-square cond1" id="s506"></div>
+<div class="alberta-person-square cond1" id="s507"></div>
+<div class="alberta-person-square cond1" id="s508"></div>
+<div class="alberta-person-square cond1" id="s509"></div>
+<div class="alberta-person-square cond1" id="s510"></div>
+<div class="alberta-person-square cond1" id="s511"></div>
+<div class="alberta-person-square cond1" id="s512"></div>
+<div class="alberta-person-square cond1" id="s513"></div>
+<div class="alberta-person-square cond1" id="s514"></div>
+<div class="alberta-person-square cond1" id="s515"></div>
+<div class="alberta-person-square cond1" id="s516"></div>
+<div class="alberta-person-square cond1" id="s517"></div>
+<div class="alberta-person-square cond1" id="s518"></div>
+<div class="alberta-person-square cond1" id="s519"></div>
+<div class="alberta-person-square cond1" id="s520"></div>
+<div class="alberta-person-square cond1" id="s521"></div>
+<div class="alberta-person-square cond1" id="s522"></div>
+<div class="alberta-person-square cond1" id="s523"></div>
+<div class="alberta-person-square cond1" id="s524"></div>
+<div class="alberta-person-square cond1" id="s525"></div>
+<div class="alberta-person-square cond1" id="s526"></div>
+<div class="alberta-person-square cond1" id="s527"></div>
+<div class="alberta-person-square cond1" id="s528"></div>
+<div class="alberta-person-square cond1" id="s529"></div>
+<div class="alberta-person-square cond1" id="s530"></div>
+<div class="alberta-person-square cond1" id="s531"></div>
+<div class="alberta-person-square cond1" id="s532"></div>
+<div class="alberta-person-square cond1" id="s533"></div>
+<div class="alberta-person-square cond1" id="s534"></div>
+<div class="alberta-person-square cond1" id="s535"></div>
+<div class="alberta-person-square cond1" id="s536"></div>
+<div class="alberta-person-square cond1" id="s537"></div>
+<div class="alberta-person-square cond1" id="s538"></div>
+<div class="alberta-person-square cond1" id="s539"></div>
+<div class="alberta-person-square cond1" id="s540"></div>
+<div class="alberta-person-square cond1" id="s541"></div>
+<div class="alberta-person-square cond1" id="s542"></div>
+<div class="alberta-person-square cond1" id="s543"></div>
+<div class="alberta-person-square cond1" id="s544"></div>
+<div class="alberta-person-square cond1" id="s545"></div>
+<div class="alberta-person-square cond1" id="s546"></div>
+<div class="alberta-person-square cond1" id="s547"></div>
+<div class="alberta-person-square cond1" id="s548"></div>
+<div class="alberta-person-square cond1" id="s549"></div>
+<div class="alberta-person-square cond1" id="s550"></div>
+<div class="alberta-person-square cond1" id="s551"></div>
+<div class="alberta-person-square cond1" id="s552"></div>
+<div class="alberta-person-square cond1" id="s553"></div>
+<div class="alberta-person-square cond1" id="s554"></div>
+<div class="alberta-person-square cond1" id="s555"></div>
+<div class="alberta-person-square cond1" id="s556"></div>
+<div class="alberta-person-square cond1" id="s557"></div>
+<div class="alberta-person-square cond1" id="s558"></div>
+<div class="alberta-person-square cond1" id="s559"></div>
+<div class="alberta-person-square cond1" id="s560"></div>
+<div class="alberta-person-square cond1" id="s561"></div>
+<div class="alberta-person-square cond1" id="s562"></div>
+<div class="alberta-person-square cond1" id="s563"></div>
+<div class="alberta-person-square cond1" id="s564"></div>
+<div class="alberta-person-square cond1" id="s565"></div>
+<div class="alberta-person-square cond1" id="s566"></div>
+<div class="alberta-person-square cond1" id="s567"></div>
+<div class="alberta-person-square cond1" id="s568"></div>
+<div class="alberta-person-square cond1" id="s569"></div>
+<div class="alberta-person-square cond1" id="s570"></div>
+<div class="alberta-person-square cond1" id="s571"></div>
+<div class="alberta-person-square cond1" id="s572"></div>
+<div class="alberta-person-square cond1" id="s573"></div>
+<div class="alberta-person-square cond1" id="s574"></div>
+<div class="alberta-person-square cond1" id="s575"></div>
+<div class="alberta-person-square cond1" id="s576"></div>
+<div class="alberta-person-square cond1" id="s577"></div>
+<div class="alberta-person-square cond1" id="s578"></div>
+<div class="alberta-person-square cond1" id="s579"></div>
+<div class="alberta-person-square cond1" id="s580"></div>
+<div class="alberta-person-square cond1" id="s581"></div>
+<div class="alberta-person-square cond1" id="s582"></div>
+<div class="alberta-person-square cond1" id="s583"></div>
+<div class="alberta-person-square cond1" id="s584"></div>
+<div class="alberta-person-square cond1" id="s585"></div>
+<div class="alberta-person-square cond1" id="s586"></div>
+<div class="alberta-person-square cond1" id="s587"></div>
+<div class="alberta-person-square cond1" id="s588"></div>
+<div class="alberta-person-square cond1" id="s589"></div>
+<div class="alberta-person-square cond1" id="s590"></div>
+<div class="alberta-person-square cond1" id="s591"></div>
+<div class="alberta-person-square cond1" id="s592"></div>
+<div class="alberta-person-square cond1" id="s593"></div>
+<div class="alberta-person-square cond1" id="s594"></div>
+<div class="alberta-person-square cond1" id="s595"></div>
+<div class="alberta-person-square cond1" id="s596"></div>
+<div class="alberta-person-square cond1" id="s597"></div>
+<div class="alberta-person-square cond1" id="s598"></div>
+<div class="alberta-person-square cond1" id="s599"></div>
+<div class="alberta-person-square cond1" id="s600"></div>
+<div class="alberta-person-square cond1" id="s601"></div>
+<div class="alberta-person-square cond1" id="s602"></div>
+<div class="alberta-person-square cond1" id="s603"></div>
+<div class="alberta-person-square cond1" id="s604"></div>
+<div class="alberta-person-square cond1" id="s605"></div>
+<div class="alberta-person-square cond1" id="s606"></div>
+<div class="alberta-person-square cond1" id="s607"></div>
+<div class="alberta-person-square cond1" id="s608"></div>
+<div class="alberta-person-square cond1" id="s609"></div>
+<div class="alberta-person-square cond1" id="s610"></div>
+<div class="alberta-person-square cond1" id="s611"></div>
+<div class="alberta-person-square cond1" id="s612"></div>
+<div class="alberta-person-square cond1" id="s613"></div>
+<div class="alberta-person-square cond1" id="s614"></div>
+<div class="alberta-person-square cond1" id="s615"></div>
+<div class="alberta-person-square cond1" id="s616"></div>
+<div class="alberta-person-square cond1" id="s617"></div>
+<div class="alberta-person-square cond1" id="s618"></div>
+<div class="alberta-person-square cond1" id="s619"></div>
+<div class="alberta-person-square cond1" id="s620"></div>
+<div class="alberta-person-square cond1" id="s621"></div>
+<div class="alberta-person-square cond1" id="s622"></div>
+<div class="alberta-person-square cond1" id="s623"></div>
+<div class="alberta-person-square cond1" id="s624"></div>
+<div class="alberta-person-square cond1" id="s625"></div>
+<div class="alberta-person-square cond1" id="s626"></div>
+<div class="alberta-person-square cond1" id="s627"></div>
+<div class="alberta-person-square cond1" id="s628"></div>
+<div class="alberta-person-square cond1" id="s629"></div>
+<div class="alberta-person-square cond1" id="s630"></div>
+<div class="alberta-person-square cond1" id="s631"></div>
+<div class="alberta-person-square cond1" id="s632"></div>
+<div class="alberta-person-square cond1" id="s633"></div>
+<div class="alberta-person-square cond1" id="s634"></div>
+<div class="alberta-person-square cond1" id="s635"></div>
+<div class="alberta-person-square cond1" id="s636"></div>
+<div class="alberta-person-square cond1" id="s637"></div>
+<div class="alberta-person-square cond1" id="s638"></div>
+<div class="alberta-person-square cond1" id="s639"></div>
+<div class="alberta-person-square cond1" id="s640"></div>
+<div class="alberta-person-square cond1" id="s641"></div>
+<div class="alberta-person-square cond1" id="s642"></div>
+<div class="alberta-person-square cond1" id="s643"></div>
+<div class="alberta-person-square cond1" id="s644"></div>
+<div class="alberta-person-square cond1" id="s645"></div>
+<div class="alberta-person-square cond1" id="s646"></div>
+<div class="alberta-person-square cond1" id="s647"></div>
+<div class="alberta-person-square cond1" id="s648"></div>
+<div class="alberta-person-square cond1" id="s649"></div>
+<div class="alberta-person-square cond1" id="s650"></div>
+<div class="alberta-person-square cond1" id="s651"></div>
+<div class="alberta-person-square cond1" id="s652"></div>
+<div class="alberta-person-square cond1" id="s653"></div>
+<div class="alberta-person-square cond1" id="s654"></div>
+<div class="alberta-person-square cond1" id="s655"></div>
+<div class="alberta-person-square cond1" id="s656"></div>
+<div class="alberta-person-square cond1" id="s657"></div>
+<div class="alberta-person-square cond1" id="s658"></div>
+<div class="alberta-person-square cond1" id="s659"></div>
+<div class="alberta-person-square cond1" id="s660"></div>
+<div class="alberta-person-square cond1" id="s661"></div>
+<div class="alberta-person-square cond1" id="s662"></div>
+<div class="alberta-person-square cond1" id="s663"></div>
+<div class="alberta-person-square cond1" id="s664"></div>
+<div class="alberta-person-square cond1" id="s665"></div>
+<div class="alberta-person-square cond1" id="s666"></div>
+<div class="alberta-person-square cond1" id="s667"></div>
+<div class="alberta-person-square cond1" id="s668"></div>
+<div class="alberta-person-square cond1" id="s669"></div>
+<div class="alberta-person-square cond1" id="s670"></div>
+<div class="alberta-person-square cond1" id="s671"></div>
+<div class="alberta-person-square cond1" id="s672"></div>
+<div class="alberta-person-square cond1" id="s673"></div>
+<div class="alberta-person-square cond1" id="s674"></div>
+<div class="alberta-person-square cond1" id="s675"></div>
+<div class="alberta-person-square cond1" id="s676"></div>
+<div class="alberta-person-square cond1" id="s677"></div>
+<div class="alberta-person-square cond1" id="s678"></div>
+<div class="alberta-person-square cond1" id="s679"></div>
+<div class="alberta-person-square cond1" id="s680"></div>
+<div class="alberta-person-square cond1" id="s681"></div>
+<div class="alberta-person-square cond1" id="s682"></div>
+<div class="alberta-person-square cond1" id="s683"></div>
+<div class="alberta-person-square cond1" id="s684"></div>
+<div class="alberta-person-square cond1" id="s685"></div>
+<div class="alberta-person-square cond1" id="s686"></div>
+<div class="alberta-person-square cond1" id="s687"></div>
+<div class="alberta-person-square cond1" id="s688"></div>
+<div class="alberta-person-square cond1" id="s689"></div>
+<div class="alberta-person-square cond1" id="s690"></div>
+<div class="alberta-person-square cond1" id="s691"></div>
+<div class="alberta-person-square cond1" id="s692"></div>
+<div class="alberta-person-square cond1" id="s693"></div>
+<div class="alberta-person-square cond1" id="s694"></div>
+<div class="alberta-person-square cond1" id="s695"></div>
+<div class="alberta-person-square cond1" id="s696"></div>
+<div class="alberta-person-square cond1" id="s697"></div>
+<div class="alberta-person-square cond1" id="s698"></div>
+<div class="alberta-person-square cond1" id="s699"></div>
+<div class="alberta-person-square cond1" id="s700"></div>
+<div class="alberta-person-square cond1" id="s701"></div>
+<div class="alberta-person-square cond1" id="s702"></div>
+<div class="alberta-person-square cond1" id="s703"></div>
+<div class="alberta-person-square cond1" id="s704"></div>
+<div class="alberta-person-square cond1" id="s705"></div>
+<div class="alberta-person-square cond1" id="s706"></div>
+<div class="alberta-person-square cond1" id="s707"></div>
+<div class="alberta-person-square cond1" id="s708"></div>
+<div class="alberta-person-square cond1" id="s709"></div>
+<div class="alberta-person-square cond1" id="s710"></div>
+<div class="alberta-person-square cond1" id="s711"></div>
+<div class="alberta-person-square cond1" id="s712"></div>
+<div class="alberta-person-square cond1" id="s713"></div>
+<div class="alberta-person-square cond1" id="s714"></div>
+<div class="alberta-person-square cond1" id="s715"></div>
+<div class="alberta-person-square cond1" id="s716"></div>
+<div class="alberta-person-square cond1" id="s717"></div>
+<div class="alberta-person-square cond1" id="s718"></div>
+<div class="alberta-person-square cond1" id="s719"></div>
+<div class="alberta-person-square cond1" id="s720"></div>
+<div class="alberta-person-square cond1" id="s721"></div>
+<div class="alberta-person-square cond1" id="s722"></div>
+<div class="alberta-person-square cond1" id="s723"></div>
+<div class="alberta-person-square cond1" id="s724"></div>
+<div class="alberta-person-square cond1" id="s725"></div>
+<div class="alberta-person-square cond1" id="s726"></div>
+<div class="alberta-person-square cond1" id="s727"></div>
+<div class="alberta-person-square cond1" id="s728"></div>
+<div class="alberta-person-square cond1" id="s729"></div>
+<div class="alberta-person-square cond1" id="s730"></div>
+<div class="alberta-person-square cond1" id="s731"></div>
+<div class="alberta-person-square cond1" id="s732"></div>
+<div class="alberta-person-square cond1" id="s733"></div>
+<div class="alberta-person-square cond1" id="s734"></div>
+<div class="alberta-person-square cond1" id="s735"></div>
+<div class="alberta-person-square cond1" id="s736"></div>
+<div class="alberta-person-square cond1" id="s737"></div>
+<div class="alberta-person-square cond1" id="s738"></div>
+<div class="alberta-person-square cond1" id="s739"></div>
+<div class="alberta-person-square cond1" id="s740"></div>
+<div class="alberta-person-square cond1" id="s741"></div>
+<div class="alberta-person-square cond1" id="s742"></div>
+<div class="alberta-person-square cond1" id="s743"></div>
+<div class="alberta-person-square cond1" id="s744"></div>
+<div class="alberta-person-square cond1" id="s745"></div>
+<div class="alberta-person-square cond1" id="s746"></div>
+<div class="alberta-person-square cond1" id="s747"></div>
+<div class="alberta-person-square cond1" id="s748"></div>
+<div class="alberta-person-square cond1" id="s749"></div>
+<div class="alberta-person-square cond1" id="s750"></div>
+<div class="alberta-person-square cond1" id="s751"></div>
+<div class="alberta-person-square cond1" id="s752"></div>
+<div class="alberta-person-square cond1" id="s753"></div>
+<div class="alberta-person-square cond1" id="s754"></div>
+<div class="alberta-person-square cond1" id="s755"></div>
+<div class="alberta-person-square cond1" id="s756"></div>
+<div class="alberta-person-square cond1" id="s757"></div>
+<div class="alberta-person-square cond1" id="s758"></div>
+<div class="alberta-person-square cond1" id="s759"></div>
+<div class="alberta-person-square cond1" id="s760"></div>
+<div class="alberta-person-square cond1" id="s761"></div>
+<div class="alberta-person-square cond1" id="s762"></div>
+<div class="alberta-person-square cond1" id="s763"></div>
+<div class="alberta-person-square cond1" id="s764"></div>
+<div class="alberta-person-square cond1" id="s765"></div>
+<div class="alberta-person-square cond1" id="s766"></div>
+<div class="alberta-person-square cond1" id="s767"></div>
+<div class="alberta-person-square cond1" id="s768"></div>
+<div class="alberta-person-square cond1" id="s769"></div>
+<div class="alberta-person-square cond1" id="s770"></div>
+<div class="alberta-person-square cond1" id="s771"></div>
+<div class="alberta-person-square cond1" id="s772"></div>
+<div class="alberta-person-square cond1" id="s773"></div>
+<div class="alberta-person-square cond1" id="s774"></div>
+<div class="alberta-person-square cond1" id="s775"></div>
+<div class="alberta-person-square cond1" id="s776"></div>
+<div class="alberta-person-square cond1" id="s777"></div>
+<div class="alberta-person-square cond1" id="s778"></div>
+<div class="alberta-person-square cond1" id="s779"></div>
+<div class="alberta-person-square cond1" id="s780"></div>
+<div class="alberta-person-square cond1" id="s781"></div>
+<div class="alberta-person-square cond1" id="s782"></div>
+<div class="alberta-person-square cond1" id="s783"></div>
+<div class="alberta-person-square cond1" id="s784"></div>
+<div class="alberta-person-square cond1" id="s785"></div>
+<div class="alberta-person-square cond1" id="s786"></div>
+<div class="alberta-person-square cond1" id="s787"></div>
+<div class="alberta-person-square cond1" id="s788"></div>
+<div class="alberta-person-square cond1" id="s789"></div>
+<div class="alberta-person-square cond1" id="s790"></div>
+<div class="alberta-person-square cond1" id="s791"></div>
+<div class="alberta-person-square cond1" id="s792"></div>
+<div class="alberta-person-square cond1" id="s793"></div>
+<div class="alberta-person-square cond1" id="s794"></div>
+<div class="alberta-person-square cond1" id="s795"></div>
+<div class="alberta-person-square cond1" id="s796"></div>
+<div class="alberta-person-square cond1" id="s797"></div>
+<div class="alberta-person-square cond1" id="s798"></div>
+<div class="alberta-person-square cond1" id="s799"></div>
+<div class="alberta-person-square cond1" id="s800"></div>
+<div class="alberta-person-square cond1" id="s801"></div>
+<div class="alberta-person-square cond1" id="s802"></div>
+<div class="alberta-person-square cond1" id="s803"></div>
+<div class="alberta-person-square cond1" id="s804"></div>
+<div class="alberta-person-square cond1" id="s805"></div>
+<div class="alberta-person-square cond1" id="s806"></div>
+<div class="alberta-person-square cond1" id="s807"></div>
+<div class="alberta-person-square cond1" id="s808"></div>
+<div class="alberta-person-square cond1" id="s809"></div>
+<div class="alberta-person-square cond1" id="s810"></div>
+<div class="alberta-person-square cond1" id="s811"></div>
+<div class="alberta-person-square cond1" id="s812"></div>
+<div class="alberta-person-square cond1" id="s813"></div>
+<div class="alberta-person-square cond1" id="s814"></div>
+<div class="alberta-person-square cond1" id="s815"></div>
+<div class="alberta-person-square cond1" id="s816"></div>
+<div class="alberta-person-square cond1" id="s817"></div>
+<div class="alberta-person-square cond1" id="s818"></div>
+<div class="alberta-person-square cond1" id="s819"></div>
+<div class="alberta-person-square cond1" id="s820"></div>
+<div class="alberta-person-square cond1" id="s821"></div>
+<div class="alberta-person-square cond1" id="s822"></div>
+<div class="alberta-person-square cond1" id="s823"></div>
+<div class="alberta-person-square cond1" id="s824"></div>
+<div class="alberta-person-square cond1" id="s825"></div>
+<div class="alberta-person-square cond1" id="s826"></div>
+<div class="alberta-person-square cond1" id="s827"></div>
+<div class="alberta-person-square cond1" id="s828"></div>
+<div class="alberta-person-square cond1" id="s829"></div>
+<div class="alberta-person-square cond1" id="s830"></div>
+<div class="alberta-person-square cond1" id="s831"></div>
+<div class="alberta-person-square cond1" id="s832"></div>
+<div class="alberta-person-square cond1" id="s833"></div>
+<div class="alberta-person-square cond1" id="s834"></div>
+<div class="alberta-person-square cond1" id="s835"></div>
+<div class="alberta-person-square cond1" id="s836"></div>
+<div class="alberta-person-square cond1" id="s837"></div>
+<div class="alberta-person-square cond1" id="s838"></div>
+<div class="alberta-person-square cond1" id="s839"></div>
+<div class="alberta-person-square cond1" id="s840"></div>
+<div class="alberta-person-square cond1" id="s841"></div>
+<div class="alberta-person-square cond1" id="s842"></div>
+<div class="alberta-person-square cond1" id="s843"></div>
+<div class="alberta-person-square cond1" id="s844"></div>
+<div class="alberta-person-square cond1" id="s845"></div>
+<div class="alberta-person-square cond1" id="s846"></div>
+<div class="alberta-person-square cond1" id="s847"></div>
+<div class="alberta-person-square cond1" id="s848"></div>
+<div class="alberta-person-square cond1" id="s849"></div>
+<div class="alberta-person-square cond1" id="s850"></div>
+<div class="alberta-person-square cond1" id="s851"></div>
+<div class="alberta-person-square cond1" id="s852"></div>
+<div class="alberta-person-square cond1" id="s853"></div>
+<div class="alberta-person-square cond1" id="s854"></div>
+<div class="alberta-person-square cond1" id="s855"></div>
+<div class="alberta-person-square cond1" id="s856"></div>
+<div class="alberta-person-square cond1" id="s857"></div>
+<div class="alberta-person-square cond1" id="s858"></div>
+<div class="alberta-person-square cond1" id="s859"></div>
+<div class="alberta-person-square cond1" id="s860"></div>
+<div class="alberta-person-square cond1" id="s861"></div>
+<div class="alberta-person-square cond1" id="s862"></div>
+<div class="alberta-person-square cond1" id="s863"></div>
+<div class="alberta-person-square cond1" id="s864"></div>
+<div class="alberta-person-square cond1" id="s865"></div>
+<div class="alberta-person-square cond1" id="s866"></div>
+<div class="alberta-person-square cond1" id="s867"></div>
+<div class="alberta-person-square cond1" id="s868"></div>
+<div class="alberta-person-square cond1" id="s869"></div>
+<div class="alberta-person-square cond1" id="s870"></div>
+<div class="alberta-person-square cond1" id="s871"></div>
+<div class="alberta-person-square cond1" id="s872"></div>
+<div class="alberta-person-square cond1" id="s873"></div>
+<div class="alberta-person-square cond1" id="s874"></div>
+<div class="alberta-person-square cond1" id="s875"></div>
+<div class="alberta-person-square cond1" id="s876"></div>
+<div class="alberta-person-square cond1" id="s877"></div>
+<div class="alberta-person-square cond1" id="s878"></div>
+<div class="alberta-person-square cond1" id="s879"></div>
+<div class="alberta-person-square cond1" id="s880"></div>
+<div class="alberta-person-square cond1" id="s881"></div>
+<div class="alberta-person-square cond1" id="s882"></div>
+<div class="alberta-person-square cond1" id="s883"></div>
+<div class="alberta-person-square cond1" id="s884"></div>
+<div class="alberta-person-square cond1" id="s885"></div>
+<div class="alberta-person-square cond1" id="s886"></div>
+<div class="alberta-person-square cond1" id="s887"></div>
+<div class="alberta-person-square cond1" id="s888"></div>
+<div class="alberta-person-square cond1" id="s889"></div>
+<div class="alberta-person-square cond1" id="s890"></div>
+<div class="alberta-person-square cond1" id="s891"></div>
+<div class="alberta-person-square cond1" id="s892"></div>
+<div class="alberta-person-square cond1" id="s893"></div>
+<div class="alberta-person-square cond1" id="s894"></div>
+<div class="alberta-person-square cond1" id="s895"></div>
+<div class="alberta-person-square cond1" id="s896"></div>
+<div class="alberta-person-square cond1" id="s897"></div>
+<div class="alberta-person-square cond1" id="s898"></div>
+<div class="alberta-person-square cond1" id="s899"></div>
+<div class="alberta-person-square cond1" id="s900"></div>
+<div class="alberta-person-square cond1" id="s901"></div>
+<div class="alberta-person-square cond1" id="s902"></div>
+<div class="alberta-person-square cond1" id="s903"></div>
+<div class="alberta-person-square cond1" id="s904"></div>
+<div class="alberta-person-square cond1" id="s905"></div>
+<div class="alberta-person-square cond1" id="s906"></div>
+<div class="alberta-person-square cond1" id="s907"></div>
+<div class="alberta-person-square cond1" id="s908"></div>
+<div class="alberta-person-square cond1" id="s909"></div>
+<div class="alberta-person-square cond1" id="s910"></div>
+<div class="alberta-person-square cond1" id="s911"></div>
+<div class="alberta-person-square cond1" id="s912"></div>
+<div class="alberta-person-square cond1" id="s913"></div>
+<div class="alberta-person-square cond1" id="s914"></div>
+<div class="alberta-person-square cond1" id="s915"></div>
+<div class="alberta-person-square cond1" id="s916"></div>
+<div class="alberta-person-square cond1" id="s917"></div>
+<div class="alberta-person-square cond1" id="s918"></div>
+<div class="alberta-person-square cond1" id="s919"></div>
+<div class="alberta-person-square cond1" id="s920"></div>
+<div class="alberta-person-square cond1" id="s921"></div>
+<div class="alberta-person-square cond1" id="s922"></div>
+<div class="alberta-person-square cond1" id="s923"></div>
+<div class="alberta-person-square cond1" id="s924"></div>
+<div class="alberta-person-square cond1" id="s925"></div>
+<div class="alberta-person-square cond1" id="s926"></div>
+<div class="alberta-person-square cond1" id="s927"></div>
+<div class="alberta-person-square cond1" id="s928"></div>
+<div class="alberta-person-square cond1" id="s929"></div>
+<div class="alberta-person-square cond1" id="s930"></div>
+<div class="alberta-person-square cond1" id="s931"></div>
+<div class="alberta-person-square cond1" id="s932"></div>
+<div class="alberta-person-square cond1" id="s933"></div>
+<div class="alberta-person-square cond1" id="s934"></div>
+<div class="alberta-person-square cond1" id="s935"></div>
+<div class="alberta-person-square cond1" id="s936"></div>
+<div class="alberta-person-square cond1" id="s937"></div>
+<div class="alberta-person-square cond1" id="s938"></div>
+<div class="alberta-person-square cond1" id="s939"></div>
+<div class="alberta-person-square cond1" id="s940"></div>
+<div class="alberta-person-square cond1" id="s941"></div>
+<div class="alberta-person-square cond1" id="s942"></div>
+<div class="alberta-person-square cond1" id="s943"></div>
+<div class="alberta-person-square cond1" id="s944"></div>
+<div class="alberta-person-square cond1" id="s945"></div>
+<div class="alberta-person-square cond1" id="s946"></div>
+<div class="alberta-person-square cond1" id="s947"></div>
+<div class="alberta-person-square cond1" id="s948"></div>
+<div class="alberta-person-square cond1" id="s949"></div>
+<div class="alberta-person-square cond1" id="s950"></div>
+<div class="alberta-person-square cond1" id="s951"></div>
+<div class="alberta-person-square cond1" id="s952"></div>
+<div class="alberta-person-square cond1" id="s953"></div>
+<div class="alberta-person-square cond1" id="s954"></div>
+<div class="alberta-person-square cond1" id="s955"></div>
+<div class="alberta-person-square cond1" id="s956"></div>
+<div class="alberta-person-square cond1" id="s957"></div>
+<div class="alberta-person-square cond1" id="s958"></div>
+<div class="alberta-person-square cond1" id="s959"></div>
+<div class="alberta-person-square cond1" id="s960"></div>
+<div class="alberta-person-square cond1" id="s961"></div>
+<div class="alberta-person-square cond1" id="s962"></div>
+<div class="alberta-person-square cond1" id="s963"></div>
+<div class="alberta-person-square cond1" id="s964"></div>
+<div class="alberta-person-square cond1" id="s965"></div>
+<div class="alberta-person-square cond1" id="s966"></div>
+<div class="alberta-person-square cond1" id="s967"></div>
+<div class="alberta-person-square cond1" id="s968"></div>
+<div class="alberta-person-square cond1" id="s969"></div>
+<div class="alberta-person-square cond1" id="s970"></div>
+<div class="alberta-person-square cond1" id="s971"></div>
+<div class="alberta-person-square cond1" id="s972"></div>
+<div class="alberta-person-square cond1" id="s973"></div>
+<div class="alberta-person-square cond1" id="s974"></div>
+<div class="alberta-person-square cond1" id="s975"></div>
+<div class="alberta-person-square cond1" id="s976"></div>
+<div class="alberta-person-square cond1" id="s977"></div>
+<div class="alberta-person-square cond1" id="s978"></div>
+<div class="alberta-person-square cond1" id="s979"></div>
+<div class="alberta-person-square cond1" id="s980"></div>
+<div class="alberta-person-square cond1" id="s981"></div>
+<div class="alberta-person-square cond1" id="s982"></div>
+<div class="alberta-person-square cond1" id="s983"></div>
+<div class="alberta-person-square cond1" id="s984"></div>
+<div class="alberta-person-square cond1" id="s985"></div>
+<div class="alberta-person-square cond1" id="s986"></div>
+<div class="alberta-person-square cond1" id="s987"></div>
+<div class="alberta-person-square cond1" id="s988"></div>
+<div class="alberta-person-square cond1" id="s989"></div>
+<div class="alberta-person-square cond1" id="s990"></div>
+<div class="alberta-person-square cond1" id="s991"></div>
+<div class="alberta-person-square cond1" id="s992"></div>
+<div class="alberta-person-square cond1" id="s993"></div>
+<div class="alberta-person-square cond1" id="s994"></div>
+<div class="alberta-person-square cond1" id="s995"></div>
+<div class="alberta-person-square cond1" id="s996"></div>
+<div class="alberta-person-square cond1" id="s997"></div>
+<div class="alberta-person-square cond1" id="s998"></div>
+<div class="alberta-person-square cond1" id="s999"></div>
+<div class="alberta-person-square cond1" id="s1000"></div>
+<div class="alberta-person-square cond1" id="s1001"></div>
+<div class="alberta-person-square cond1" id="s1002"></div>
+<div class="alberta-person-square cond1" id="s1003"></div>
+<div class="alberta-person-square cond1" id="s1004"></div>
+<div class="alberta-person-square cond1" id="s1005"></div>
+<div class="alberta-person-square cond1" id="s1006"></div>
+<div class="alberta-person-square cond1" id="s1007"></div>
+<div class="alberta-person-square cond1" id="s1008"></div>
+<div class="alberta-person-square cond1" id="s1009"></div>
+<div class="alberta-person-square cond1" id="s1010"></div>
+<div class="alberta-person-square cond1" id="s1011"></div>
+<div class="alberta-person-square cond1" id="s1012"></div>
+<div class="alberta-person-square cond1" id="s1013"></div>
+<div class="alberta-person-square cond1" id="s1014"></div>
+<div class="alberta-person-square cond1" id="s1015"></div>
+<div class="alberta-person-square cond1" id="s1016"></div>
+<div class="alberta-person-square cond1" id="s1017"></div>
+<div class="alberta-person-square cond1" id="s1018"></div>
+<div class="alberta-person-square cond1" id="s1019"></div>
+<div class="alberta-person-square cond1" id="s1020"></div>
+<div class="alberta-person-square cond1" id="s1021"></div>
+<div class="alberta-person-square cond1" id="s1022"></div>
+<div class="alberta-person-square cond1" id="s1023"></div>
+<div class="alberta-person-square cond1" id="s1024"></div>
+<div class="alberta-person-square cond1" id="s1025"></div>
+<div class="alberta-person-square cond1" id="s1026"></div>
+<div class="alberta-person-square cond1" id="s1027"></div>
+<div class="alberta-person-square cond1" id="s1028"></div>
+<div class="alberta-person-square cond1" id="s1029"></div>
+<div class="alberta-person-square cond1" id="s1030"></div>
+<div class="alberta-person-square cond1" id="s1031"></div>
+<div class="alberta-person-square cond1" id="s1032"></div>
+<div class="alberta-person-square cond1" id="s1033"></div>
+<div class="alberta-person-square cond1" id="s1034"></div>
+<div class="alberta-person-square cond1" id="s1035"></div>
+<div class="alberta-person-square cond1" id="s1036"></div>
+<div class="alberta-person-square cond1" id="s1037"></div>
+<div class="alberta-person-square cond1" id="s1038"></div>
+<div class="alberta-person-square cond1" id="s1039"></div>
+<div class="alberta-person-square cond1" id="s1040"></div>
+<div class="alberta-person-square cond1" id="s1041"></div>
+<div class="alberta-person-square cond1" id="s1042"></div>
+<div class="alberta-person-square cond1" id="s1043"></div>
+<div class="alberta-person-square cond1" id="s1044"></div>
+<div class="alberta-person-square cond1" id="s1045"></div>
+<div class="alberta-person-square cond1" id="s1046"></div>
+<div class="alberta-person-square cond1" id="s1047"></div>
+<div class="alberta-person-square cond1" id="s1048"></div>
+<div class="alberta-person-square cond1" id="s1049"></div>
+<div class="alberta-person-square cond1" id="s1050"></div>
+<div class="alberta-person-square cond1" id="s1051"></div>
+<div class="alberta-person-square cond1" id="s1052"></div>
+<div class="alberta-person-square cond1" id="s1053"></div>
+<div class="alberta-person-square cond1" id="s1054"></div>
+<div class="alberta-person-square cond1" id="s1055"></div>
+<div class="alberta-person-square cond1" id="s1056"></div>
+<div class="alberta-person-square cond1" id="s1057"></div>
+<div class="alberta-person-square cond1" id="s1058"></div>
+<div class="alberta-person-square cond1" id="s1059"></div>
+<div class="alberta-person-square cond1" id="s1060"></div>
+<div class="alberta-person-square cond1" id="s1061"></div>
+<div class="alberta-person-square cond1" id="s1062"></div>
+<div class="alberta-person-square cond1" id="s1063"></div>
+<div class="alberta-person-square cond1" id="s1064"></div>
+<div class="alberta-person-square cond1" id="s1065"></div>
+<div class="alberta-person-square cond1" id="s1066"></div>
+<div class="alberta-person-square cond1" id="s1067"></div>
+<div class="alberta-person-square cond1" id="s1068"></div>
+<div class="alberta-person-square cond1" id="s1069"></div>
+<div class="alberta-person-square cond1" id="s1070"></div>
+<div class="alberta-person-square cond1" id="s1071"></div>
+<div class="alberta-person-square cond1" id="s1072"></div>
+<div class="alberta-person-square cond1" id="s1073"></div>
+<div class="alberta-person-square cond1" id="s1074"></div>
+<div class="alberta-person-square cond1" id="s1075"></div>
+<div class="alberta-person-square cond1" id="s1076"></div>
+<div class="alberta-person-square cond1" id="s1077"></div>
+<div class="alberta-person-square cond1" id="s1078"></div>
+<div class="alberta-person-square cond1" id="s1079"></div>
+<div class="alberta-person-square cond1" id="s1080"></div>
+<div class="alberta-person-square cond1" id="s1081"></div>
+<div class="alberta-person-square cond1" id="s1082"></div>
+<div class="alberta-person-square cond1" id="s1083"></div>
+<div class="alberta-person-square cond1" id="s1084"></div>
+<div class="alberta-person-square cond1" id="s1085"></div>
+<div class="alberta-person-square cond1" id="s1086"></div>
+<div class="alberta-person-square cond1" id="s1087"></div>
+<div class="alberta-person-square cond1" id="s1088"></div>
+<div class="alberta-person-square cond1" id="s1089"></div>
+<div class="alberta-person-square cond1" id="s1090"></div>
+<div class="alberta-person-square cond1" id="s1091"></div>
+<div class="alberta-person-square cond1" id="s1092"></div>
+<div class="alberta-person-square cond1" id="s1093"></div>
+<div class="alberta-person-square cond1" id="s1094"></div>
+<div class="alberta-person-square cond1" id="s1095"></div>
+<div class="alberta-person-square cond1" id="s1096"></div>
+<div class="alberta-person-square cond1" id="s1097"></div>
+<div class="alberta-person-square cond1" id="s1098"></div>
+<div class="alberta-person-square cond1" id="s1099"></div>
+<div class="alberta-person-square cond1" id="s1100"></div>
+<div class="alberta-person-square cond1" id="s1101"></div>
+<div class="alberta-person-square cond1" id="s1102"></div>
+<div class="alberta-person-square cond1" id="s1103"></div>
+<div class="alberta-person-square cond1" id="s1104"></div>
+<div class="alberta-person-square cond1" id="s1105"></div>
+<div class="alberta-person-square cond1" id="s1106"></div>
+<div class="alberta-person-square cond1" id="s1107"></div>
+<div class="alberta-person-square cond1" id="s1108"></div>
+<div class="alberta-person-square cond1" id="s1109"></div>
+<div class="alberta-person-square cond1" id="s1110"></div>
+<div class="alberta-person-square cond1" id="s1111"></div>
+<div class="alberta-person-square cond1" id="s1112"></div>
+<div class="alberta-person-square cond1" id="s1113"></div>
+<div class="alberta-person-square cond1" id="s1114"></div>
+<div class="alberta-person-square cond1" id="s1115"></div>
+<div class="alberta-person-square cond1" id="s1116"></div>
+<div class="alberta-person-square cond1" id="s1117"></div>
+<div class="alberta-person-square cond1" id="s1118"></div>
+<div class="alberta-person-square cond1" id="s1119"></div>
+<div class="alberta-person-square cond1" id="s1120"></div>
+<div class="alberta-person-square cond1" id="s1121"></div>
+<div class="alberta-person-square cond1" id="s1122"></div>
+<div class="alberta-person-square cond1" id="s1123"></div>
+<div class="alberta-person-square cond1" id="s1124"></div>
+<div class="alberta-person-square cond1" id="s1125"></div>
+<div class="alberta-person-square cond1" id="s1126"></div>
+<div class="alberta-person-square cond1" id="s1127"></div>
+<div class="alberta-person-square cond1" id="s1128"></div>
+<div class="alberta-person-square cond1" id="s1129"></div>
+<div class="alberta-person-square cond1" id="s1130"></div>
+<div class="alberta-person-square cond1" id="s1131"></div>
+<div class="alberta-person-square cond1" id="s1132"></div>
+<div class="alberta-person-square cond1" id="s1133"></div>
+<div class="alberta-person-square cond1" id="s1134"></div>
+<div class="alberta-person-square cond1" id="s1135"></div>
+<div class="alberta-person-square cond1" id="s1136"></div>
+<div class="alberta-person-square cond1" id="s1137"></div>
+<div class="alberta-person-square cond1" id="s1138"></div>
+<div class="alberta-person-square cond1" id="s1139"></div>
+<div class="alberta-person-square cond1" id="s1140"></div>
+<div class="alberta-person-square cond1" id="s1141"></div>
+<div class="alberta-person-square cond1" id="s1142"></div>
+<div class="alberta-person-square cond1" id="s1143"></div>
+<div class="alberta-person-square cond1" id="s1144"></div>
+<div class="alberta-person-square cond1" id="s1145"></div>
+<div class="alberta-person-square cond1" id="s1146"></div>
+<div class="alberta-person-square cond1" id="s1147"></div>
+<div class="alberta-person-square cond1" id="s1148"></div>
+<div class="alberta-person-square cond1" id="s1149"></div>
+<div class="alberta-person-square cond1" id="s1150"></div>
+<div class="alberta-person-square cond1" id="s1151"></div>
+<div class="alberta-person-square cond1" id="s1152"></div>
+<div class="alberta-person-square cond1" id="s1153"></div>
+<div class="alberta-person-square cond1" id="s1154"></div>
+<div class="alberta-person-square cond1" id="s1155"></div>
+<div class="alberta-person-square cond1" id="s1156"></div>
+<div class="alberta-person-square cond1" id="s1157"></div>
+<div class="alberta-person-square cond1" id="s1158"></div>
+<div class="alberta-person-square cond1" id="s1159"></div>
+<div class="alberta-person-square cond1" id="s1160"></div>
+<div class="alberta-person-square cond1" id="s1161"></div>
+<div class="alberta-person-square cond1" id="s1162"></div>
+<div class="alberta-person-square cond1" id="s1163"></div>
+<div class="alberta-person-square cond1" id="s1164"></div>
+<div class="alberta-person-square cond1" id="s1165"></div>
+<div class="alberta-person-square cond1" id="s1166"></div>
+<div class="alberta-person-square cond1" id="s1167"></div>
+<div class="alberta-person-square cond1" id="s1168"></div>
+<div class="alberta-person-square cond1" id="s1169"></div>
+<div class="alberta-person-square cond1" id="s1170"></div>
+<div class="alberta-person-square cond1" id="s1171"></div>
+<div class="alberta-person-square cond1" id="s1172"></div>
+<div class="alberta-person-square cond1" id="s1173"></div>
+<div class="alberta-person-square cond1" id="s1174"></div>
+<div class="alberta-person-square cond1" id="s1175"></div>
+<div class="alberta-person-square cond1" id="s1176"></div>
+<div class="alberta-person-square cond1" id="s1177"></div>
+<div class="alberta-person-square cond1" id="s1178"></div>
+<div class="alberta-person-square cond1" id="s1179"></div>
+<div class="alberta-person-square cond1" id="s1180"></div>
+<div class="alberta-person-square cond1" id="s1181"></div>
+<div class="alberta-person-square cond1" id="s1182"></div>
+<div class="alberta-person-square cond1" id="s1183"></div>
+<div class="alberta-person-square cond1" id="s1184"></div>
+<div class="alberta-person-square cond1" id="s1185"></div>
+<div class="alberta-person-square cond1" id="s1186"></div>
+<div class="alberta-person-square cond1" id="s1187"></div>
+<div class="alberta-person-square cond1" id="s1188"></div>
+<div class="alberta-person-square cond1" id="s1189"></div>
+<div class="alberta-person-square cond1" id="s1190"></div>
+<div class="alberta-person-square cond1" id="s1191"></div>
+<div class="alberta-person-square cond1" id="s1192"></div>
+<div class="alberta-person-square cond1" id="s1193"></div>
+<div class="alberta-person-square cond1" id="s1194"></div>
+<div class="alberta-person-square cond1" id="s1195"></div>
+<div class="alberta-person-square cond1" id="s1196"></div>
+<div class="alberta-person-square cond1" id="s1197"></div>
+<div class="alberta-person-square cond1" id="s1198"></div>
+<div class="alberta-person-square cond1" id="s1199"></div>
+<div class="alberta-person-square cond1" id="s1200"></div>
+<div class="alberta-person-square cond1" id="s1201"></div>
+<div class="alberta-person-square cond1" id="s1202"></div>
+<div class="alberta-person-square cond1" id="s1203"></div>
+<div class="alberta-person-square cond1" id="s1204"></div>
+<div class="alberta-person-square cond1" id="s1205"></div>
+<div class="alberta-person-square cond1" id="s1206"></div>
+<div class="alberta-person-square cond1" id="s1207"></div>
+<div class="alberta-person-square cond1" id="s1208"></div>
+<div class="alberta-person-square cond1" id="s1209"></div>
+<div class="alberta-person-square cond1" id="s1210"></div>
+<div class="alberta-person-square cond1" id="s1211"></div>
+<div class="alberta-person-square cond1" id="s1212"></div>
+<div class="alberta-person-square cond1" id="s1213"></div>
+<div class="alberta-person-square cond1" id="s1214"></div>
+<div class="alberta-person-square cond1" id="s1215"></div>
+<div class="alberta-person-square cond1" id="s1216"></div>
+<div class="alberta-person-square cond1" id="s1217"></div>
+<div class="alberta-person-square cond1" id="s1218"></div>
+<div class="alberta-person-square cond1" id="s1219"></div>
+<div class="alberta-person-square cond1" id="s1220"></div>
+<div class="alberta-person-square cond1" id="s1221"></div>
+<div class="alberta-person-square cond1" id="s1222"></div>
+<div class="alberta-person-square cond1" id="s1223"></div>
+<div class="alberta-person-square cond1" id="s1224"></div>
+<div class="alberta-person-square cond1" id="s1225"></div>
+<div class="alberta-person-square cond1" id="s1226"></div>
+<div class="alberta-person-square cond1" id="s1227"></div>
+<div class="alberta-person-square cond1" id="s1228"></div>
+<div class="alberta-person-square cond1" id="s1229"></div>
+<div class="alberta-person-square cond1" id="s1230"></div>
+<div class="alberta-person-square cond1" id="s1231"></div>
+<div class="alberta-person-square cond1" id="s1232"></div>
+<div class="alberta-person-square cond1" id="s1233"></div>
+<div class="alberta-person-square cond1" id="s1234"></div>
+<div class="alberta-person-square cond1" id="s1235"></div>
+<div class="alberta-person-square cond1" id="s1236"></div>
+<div class="alberta-person-square cond1" id="s1237"></div>
+<div class="alberta-person-square cond1" id="s1238"></div>
+<div class="alberta-person-square cond1" id="s1239"></div>
+<div class="alberta-person-square cond1" id="s1240"></div>
+<div class="alberta-person-square cond1" id="s1241"></div>
+<div class="alberta-person-square cond1" id="s1242"></div>
+<div class="alberta-person-square cond1" id="s1243"></div>
+<div class="alberta-person-square cond1" id="s1244"></div>
+<div class="alberta-person-square cond1" id="s1245"></div>
+<div class="alberta-person-square cond1" id="s1246"></div>
+<div class="alberta-person-square cond1" id="s1247"></div>
+<div class="alberta-person-square cond1" id="s1248"></div>
+<div class="alberta-person-square cond1" id="s1249"></div>
+<div class="alberta-person-square cond1" id="s1250"></div>
+<div class="alberta-person-square cond1" id="s1251"></div>
+<div class="alberta-person-square cond1" id="s1252"></div>
+<div class="alberta-person-square cond1" id="s1253"></div>
+<div class="alberta-person-square cond1" id="s1254"></div>
+<div class="alberta-person-square cond1" id="s1255"></div>
+<div class="alberta-person-square cond1" id="s1256"></div>
+<div class="alberta-person-square cond1" id="s1257"></div>
+<div class="alberta-person-square cond1" id="s1258"></div>
+<div class="alberta-person-square cond1" id="s1259"></div>
+<div class="alberta-person-square cond1" id="s1260"></div>
+<div class="alberta-person-square cond1" id="s1261"></div>
+<div class="alberta-person-square cond1" id="s1262"></div>
+<div class="alberta-person-square cond1" id="s1263"></div>
+<div class="alberta-person-square cond1" id="s1264"></div>
+<div class="alberta-person-square cond1" id="s1265"></div>
+<div class="alberta-person-square cond1" id="s1266"></div>
+<div class="alberta-person-square cond1" id="s1267"></div>
+<div class="alberta-person-square cond1" id="s1268"></div>
+<div class="alberta-person-square cond1" id="s1269"></div>
+<div class="alberta-person-square cond1" id="s1270"></div>
+<div class="alberta-person-square cond1" id="s1271"></div>
+<div class="alberta-person-square cond1" id="s1272"></div>
+<div class="alberta-person-square cond1" id="s1273"></div>
+<div class="alberta-person-square cond1" id="s1274"></div>
+<div class="alberta-person-square cond1" id="s1275"></div>
+<div class="alberta-person-square cond1" id="s1276"></div>
+<div class="alberta-person-square cond1" id="s1277"></div>
+<div class="alberta-person-square cond1" id="s1278"></div>
+<div class="alberta-person-square cond1" id="s1279"></div>
+<div class="alberta-person-square cond1" id="s1280"></div>
+<div class="alberta-person-square cond1" id="s1281"></div>
+<div class="alberta-person-square cond1" id="s1282"></div>
+<div class="alberta-person-square cond1" id="s1283"></div>
+<div class="alberta-person-square cond1" id="s1284"></div>
+<div class="alberta-person-square cond1" id="s1285"></div>
+<div class="alberta-person-square cond1" id="s1286"></div>
+<div class="alberta-person-square cond1" id="s1287"></div>
+<div class="alberta-person-square cond1" id="s1288"></div>
+<div class="alberta-person-square cond1" id="s1289"></div>
+<div class="alberta-person-square cond1" id="s1290"></div>
+<div class="alberta-person-square cond1" id="s1291"></div>
+<div class="alberta-person-square cond1" id="s1292"></div>
+<div class="alberta-person-square cond1" id="s1293"></div>
+<div class="alberta-person-square cond1" id="s1294"></div>
+<div class="alberta-person-square cond1" id="s1295"></div>
+<div class="alberta-person-square cond1" id="s1296"></div>
+<div class="alberta-person-square cond1" id="s1297"></div>
+<div class="alberta-person-square cond1" id="s1298"></div>
+<div class="alberta-person-square cond1" id="s1299"></div>
+<div class="alberta-person-square cond1" id="s1300"></div>
+<div class="alberta-person-square cond1" id="s1301"></div>
+<div class="alberta-person-square cond1" id="s1302"></div>
+<div class="alberta-person-square cond1" id="s1303"></div>
+<div class="alberta-person-square cond1" id="s1304"></div>
+<div class="alberta-person-square cond1" id="s1305"></div>
+<div class="alberta-person-square cond1" id="s1306"></div>
+<div class="alberta-person-square cond1" id="s1307"></div>
+<div class="alberta-person-square cond1" id="s1308"></div>
+<div class="alberta-person-square cond1" id="s1309"></div>
+<div class="alberta-person-square cond1" id="s1310"></div>
+<div class="alberta-person-square cond1" id="s1311"></div>
+<div class="alberta-person-square cond1" id="s1312"></div>
+<div class="alberta-person-square cond1" id="s1313"></div>
+<div class="alberta-person-square cond1" id="s1314"></div>
+<div class="alberta-person-square cond1" id="s1315"></div>
+<div class="alberta-person-square cond1" id="s1316"></div>
+<div class="alberta-person-square cond1" id="s1317"></div>
+<div class="alberta-person-square cond1" id="s1318"></div>
+<div class="alberta-person-square cond1" id="s1319"></div>
+<div class="alberta-person-square cond1" id="s1320"></div>
+<div class="alberta-person-square cond1" id="s1321"></div>
+<div class="alberta-person-square cond1" id="s1322"></div>
+<div class="alberta-person-square cond1" id="s1323"></div>
+<div class="alberta-person-square cond1" id="s1324"></div>
+<div class="alberta-person-square cond1" id="s1325"></div>
+<div class="alberta-person-square cond1" id="s1326"></div>
+<div class="alberta-person-square cond1" id="s1327"></div>
+<div class="alberta-person-square cond1" id="s1328"></div>
+<div class="alberta-person-square cond1" id="s1329"></div>
+<div class="alberta-person-square cond1" id="s1330"></div>
+<div class="alberta-person-square cond1" id="s1331"></div>
+<div class="alberta-person-square cond1" id="s1332"></div>
+<div class="alberta-person-square cond1" id="s1333"></div>
+<div class="alberta-person-square cond1" id="s1334"></div>
+<div class="alberta-person-square cond1" id="s1335"></div>
+<div class="alberta-person-square cond1" id="s1336"></div>
+<div class="alberta-person-square cond1" id="s1337"></div>
+<div class="alberta-person-square cond1" id="s1338"></div>
+<div class="alberta-person-square cond1" id="s1339"></div>
+<div class="alberta-person-square cond1" id="s1340"></div>
+<div class="alberta-person-square cond1" id="s1341"></div>
+<div class="alberta-person-square cond1" id="s1342"></div>
+<div class="alberta-person-square cond1" id="s1343"></div>
+<div class="alberta-person-square cond1" id="s1344"></div>
+<div class="alberta-person-square cond1" id="s1345"></div>
+<div class="alberta-person-square cond1" id="s1346"></div>
+<div class="alberta-person-square cond1" id="s1347"></div>
+<div class="alberta-person-square cond1" id="s1348"></div>
+<div class="alberta-person-square cond1" id="s1349"></div>
+<div class="alberta-person-square cond1" id="s1350"></div>
+<div class="alberta-person-square cond1" id="s1351"></div>
+<div class="alberta-person-square cond1" id="s1352"></div>
+<div class="alberta-person-square cond1" id="s1353"></div>
+<div class="alberta-person-square cond1" id="s1354"></div>
+<div class="alberta-person-square cond1" id="s1355"></div>
+<div class="alberta-person-square cond1" id="s1356"></div>
+<div class="alberta-person-square cond1" id="s1357"></div>
+<div class="alberta-person-square cond1" id="s1358"></div>
+<div class="alberta-person-square cond1" id="s1359"></div>
+<div class="alberta-person-square cond1" id="s1360"></div>
+<div class="alberta-person-square cond1" id="s1361"></div>
+<div class="alberta-person-square cond1" id="s1362"></div>
+<div class="alberta-person-square cond1" id="s1363"></div>
+<div class="alberta-person-square cond1" id="s1364"></div>
+<div class="alberta-person-square cond1" id="s1365"></div>
+<div class="alberta-person-square cond1" id="s1366"></div>
+<div class="alberta-person-square cond1" id="s1367"></div>
+<div class="alberta-person-square cond1" id="s1368"></div>
+<div class="alberta-person-square cond1" id="s1369"></div>
+<div class="alberta-person-square cond1" id="s1370"></div>
+<div class="alberta-person-square cond1" id="s1371"></div>
+<div class="alberta-person-square cond1" id="s1372"></div>
+<div class="alberta-person-square cond1" id="s1373"></div>
+<div class="alberta-person-square cond1" id="s1374"></div>
+<div class="alberta-person-square cond1" id="s1375"></div>
+<div class="alberta-person-square cond1" id="s1376"></div>
+<div class="alberta-person-square cond1" id="s1377"></div>
+<div class="alberta-person-square cond1" id="s1378"></div>
+<div class="alberta-person-square cond1" id="s1379"></div>
+<div class="alberta-person-square cond1" id="s1380"></div>
+<div class="alberta-person-square cond1" id="s1381"></div>
+<div class="alberta-person-square cond1" id="s1382"></div>
+<div class="alberta-person-square cond1" id="s1383"></div>
+<div class="alberta-person-square cond1" id="s1384"></div>
+<div class="alberta-person-square cond1" id="s1385"></div>
+<div class="alberta-person-square cond1" id="s1386"></div>
+<div class="alberta-person-square cond1" id="s1387"></div>
+<div class="alberta-person-square cond1" id="s1388"></div>
+<div class="alberta-person-square cond1" id="s1389"></div>
+<div class="alberta-person-square cond1" id="s1390"></div>
+<div class="alberta-person-square cond1" id="s1391"></div>
+<div class="alberta-person-square cond1" id="s1392"></div>
+<div class="alberta-person-square cond1" id="s1393"></div>
+<div class="alberta-person-square cond1" id="s1394"></div>
+<div class="alberta-person-square cond1" id="s1395"></div>
+<div class="alberta-person-square cond1" id="s1396"></div>
+<div class="alberta-person-square cond1" id="s1397"></div>
+<div class="alberta-person-square cond1" id="s1398"></div>
+<div class="alberta-person-square cond1" id="s1399"></div>
+<div class="alberta-person-square cond1" id="s1400"></div>
+<div class="alberta-person-square cond1" id="s1401"></div>
+<div class="alberta-person-square cond1" id="s1402"></div>
+<div class="alberta-person-square cond1" id="s1403"></div>
+<div class="alberta-person-square cond1" id="s1404"></div>
+<div class="alberta-person-square cond1" id="s1405"></div>
+<div class="alberta-person-square cond1" id="s1406"></div>
+<div class="alberta-person-square cond1" id="s1407"></div>
+<div class="alberta-person-square cond1" id="s1408"></div>
+<div class="alberta-person-square cond1" id="s1409"></div>
+<div class="alberta-person-square cond1" id="s1410"></div>
+<div class="alberta-person-square cond1" id="s1411"></div>
+<div class="alberta-person-square cond1" id="s1412"></div>
+<div class="alberta-person-square cond1" id="s1413"></div>
+<div class="alberta-person-square cond1" id="s1414"></div>
+<div class="alberta-person-square cond1" id="s1415"></div>
+<div class="alberta-person-square cond1" id="s1416"></div>
+<div class="alberta-person-square cond1" id="s1417"></div>
+<div class="alberta-person-square cond1" id="s1418"></div>
+<div class="alberta-person-square cond1" id="s1419"></div>
+<div class="alberta-person-square cond1" id="s1420"></div>
+<div class="alberta-person-square cond1" id="s1421"></div>
+<div class="alberta-person-square cond1" id="s1422"></div>
+<div class="alberta-person-square cond1" id="s1423"></div>
+<div class="alberta-person-square cond1" id="s1424"></div>
+<div class="alberta-person-square cond1" id="s1425"></div>
+<div class="alberta-person-square cond1" id="s1426"></div>
+<div class="alberta-person-square cond1" id="s1427"></div>
+<div class="alberta-person-square cond1" id="s1428"></div>
+<div class="alberta-person-square cond1" id="s1429"></div>
+<div class="alberta-person-square cond1" id="s1430"></div>
+<div class="alberta-person-square cond1" id="s1431"></div>
+<div class="alberta-person-square cond1" id="s1432"></div>
+<div class="alberta-person-square cond1" id="s1433"></div>
+<div class="alberta-person-square cond1" id="s1434"></div>
+<div class="alberta-person-square cond1" id="s1435"></div>
+<div class="alberta-person-square cond1" id="s1436"></div>
+<div class="alberta-person-square cond1" id="s1437"></div>
+<div class="alberta-person-square cond1" id="s1438"></div>
+<div class="alberta-person-square cond1" id="s1439"></div>
+<div class="alberta-person-square cond1" id="s1440"></div>
+<div class="alberta-person-square cond1" id="s1441"></div>
+<div class="alberta-person-square cond1" id="s1442"></div>
+<div class="alberta-person-square cond1" id="s1443"></div>
+<div class="alberta-person-square cond1" id="s1444"></div>
+<div class="alberta-person-square cond1" id="s1445"></div>
+<div class="alberta-person-square cond1" id="s1446"></div>
+<div class="alberta-person-square cond1" id="s1447"></div>
+<div class="alberta-person-square cond1" id="s1448"></div>
+<div class="alberta-person-square cond1" id="s1449"></div>
+<div class="alberta-person-square cond1" id="s1450"></div>
+<div class="alberta-person-square cond1" id="s1451"></div>
+<div class="alberta-person-square cond1" id="s1452"></div>
+<div class="alberta-person-square cond1" id="s1453"></div>
+<div class="alberta-person-square cond1" id="s1454"></div>
+<div class="alberta-person-square cond1" id="s1455"></div>
+<div class="alberta-person-square cond1" id="s1456"></div>
+<div class="alberta-person-square cond1" id="s1457"></div>
+<div class="alberta-person-square cond1" id="s1458"></div>
+<div class="alberta-person-square cond1" id="s1459"></div>
+<div class="alberta-person-square cond1" id="s1460"></div>
+<div class="alberta-person-square cond1" id="s1461"></div>
+<div class="alberta-person-square cond1" id="s1462"></div>
+<div class="alberta-person-square cond1" id="s1463"></div>
+<div class="alberta-person-square cond1" id="s1464"></div>
+<div class="alberta-person-square cond1" id="s1465"></div>
+<div class="alberta-person-square cond1" id="s1466"></div>
+<div class="alberta-person-square cond1" id="s1467"></div>
+<div class="alberta-person-square cond1" id="s1468"></div>
+<div class="alberta-person-square cond1" id="s1469"></div>
+<div class="alberta-person-square cond1" id="s1470"></div>
+<div class="alberta-person-square cond1" id="s1471"></div>
+<div class="alberta-person-square cond1" id="s1472"></div>
+<div class="alberta-person-square cond1" id="s1473"></div>
+<div class="alberta-person-square cond1" id="s1474"></div>
+<div class="alberta-person-square cond1" id="s1475"></div>
+<div class="alberta-person-square cond1" id="s1476"></div>
+<div class="alberta-person-square cond1" id="s1477"></div>
+<div class="alberta-person-square cond1" id="s1478"></div>
+<div class="alberta-person-square cond1" id="s1479"></div>
+<div class="alberta-person-square cond1" id="s1480"></div>
+<div class="alberta-person-square cond1" id="s1481"></div>
+<div class="alberta-person-square cond1" id="s1482"></div>
+<div class="alberta-person-square cond1" id="s1483"></div>
+<div class="alberta-person-square cond1" id="s1484"></div>
+<div class="alberta-person-square cond1" id="s1485"></div>
+<div class="alberta-person-square cond1" id="s1486"></div>
+<div class="alberta-person-square cond1" id="s1487"></div>
+<div class="alberta-person-square cond1" id="s1488"></div>
+<div class="alberta-person-square cond1" id="s1489"></div>
+<div class="alberta-person-square cond1" id="s1490"></div>
+<div class="alberta-person-square cond1" id="s1491"></div>
+<div class="alberta-person-square cond1" id="s1492"></div>
+<div class="alberta-person-square cond1" id="s1493"></div>
+<div class="alberta-person-square cond1" id="s1494"></div>
+<div class="alberta-person-square cond1" id="s1495"></div>
+<div class="alberta-person-square cond1" id="s1496"></div>
+<div class="alberta-person-square cond1" id="s1497"></div>
+<div class="alberta-person-square cond1" id="s1498"></div>
+<div class="alberta-person-square cond1" id="s1499"></div>
+<div class="alberta-person-square cond1" id="s1500"></div>
+<div class="alberta-person-square cond1" id="s1501"></div>
+<div class="alberta-person-square cond1" id="s1502"></div>
+<div class="alberta-person-square cond1" id="s1503"></div>
+<div class="alberta-person-square cond1" id="s1504"></div>
+<div class="alberta-person-square cond1" id="s1505"></div>
+<div class="alberta-person-square cond1" id="s1506"></div>
+<div class="alberta-person-square cond1" id="s1507"></div>
+<div class="alberta-person-square cond1" id="s1508"></div>
+<div class="alberta-person-square cond1" id="s1509"></div>
+<div class="alberta-person-square cond1" id="s1510"></div>
+<div class="alberta-person-square cond1" id="s1511"></div>
+<div class="alberta-person-square cond1" id="s1512"></div>
+<div class="alberta-person-square cond1" id="s1513"></div>
+<div class="alberta-person-square cond1" id="s1514"></div>
+<div class="alberta-person-square cond1" id="s1515"></div>
+<div class="alberta-person-square cond1" id="s1516"></div>
+<div class="alberta-person-square cond1" id="s1517"></div>
+<div class="alberta-person-square cond1" id="s1518"></div>
+<div class="alberta-person-square cond1" id="s1519"></div>
+<div class="alberta-person-square cond1" id="s1520"></div>
+<div class="alberta-person-square cond1" id="s1521"></div>
+<div class="alberta-person-square cond1" id="s1522"></div>
+<div class="alberta-person-square cond1" id="s1523"></div>
+<div class="alberta-person-square cond1" id="s1524"></div>
+<div class="alberta-person-square cond1" id="s1525"></div>
+<div class="alberta-person-square cond1" id="s1526"></div>
+<div class="alberta-person-square cond1" id="s1527"></div>
+<div class="alberta-person-square cond1" id="s1528"></div>
+<div class="alberta-person-square cond1" id="s1529"></div>
+<div class="alberta-person-square cond1" id="s1530"></div>
+<div class="alberta-person-square cond1" id="s1531"></div>
+<div class="alberta-person-square cond1" id="s1532"></div>
+<div class="alberta-person-square cond1" id="s1533"></div>
+<div class="alberta-person-square cond1" id="s1534"></div>
+<div class="alberta-person-square cond1" id="s1535"></div>
+<div class="alberta-person-square cond1" id="s1536"></div>
+<div class="alberta-person-square cond1" id="s1537"></div>
+<div class="alberta-person-square cond1" id="s1538"></div>
+<div class="alberta-person-square cond1" id="s1539"></div>
+<div class="alberta-person-square cond1" id="s1540"></div>
+<div class="alberta-person-square cond1" id="s1541"></div>
+<div class="alberta-person-square cond1" id="s1542"></div>
+<div class="alberta-person-square cond1" id="s1543"></div>
+<div class="alberta-person-square cond1" id="s1544"></div>
+<div class="alberta-person-square cond1" id="s1545"></div>
+<div class="alberta-person-square cond1" id="s1546"></div>
+<div class="alberta-person-square cond1" id="s1547"></div>
+<div class="alberta-person-square cond1" id="s1548"></div>
+<div class="alberta-person-square cond1" id="s1549"></div>
+<div class="alberta-person-square cond1" id="s1550"></div>
+<div class="alberta-person-square cond1" id="s1551"></div>
+<div class="alberta-person-square cond1" id="s1552"></div>
+<div class="alberta-person-square cond1" id="s1553"></div>
+<div class="alberta-person-square cond1" id="s1554"></div>
+<div class="alberta-person-square cond1" id="s1555"></div>
+<div class="alberta-person-square cond1" id="s1556"></div>
+<div class="alberta-person-square cond1" id="s1557"></div>
+<div class="alberta-person-square cond1" id="s1558"></div>
+<div class="alberta-person-square cond1" id="s1559"></div>
+<div class="alberta-person-square cond1" id="s1560"></div>
+<div class="alberta-person-square cond1" id="s1561"></div>
+<div class="alberta-person-square cond1" id="s1562"></div>
+<div class="alberta-person-square cond1" id="s1563"></div>
+<div class="alberta-person-square cond1" id="s1564"></div>
+<div class="alberta-person-square cond1" id="s1565"></div>
+<div class="alberta-person-square cond1" id="s1566"></div>
+<div class="alberta-person-square cond1" id="s1567"></div>
+<div class="alberta-person-square cond1" id="s1568"></div>
+<div class="alberta-person-square cond1" id="s1569"></div>
+<div class="alberta-person-square cond1" id="s1570"></div>
+<div class="alberta-person-square cond1" id="s1571"></div>
+<div class="alberta-person-square cond1" id="s1572"></div>
+<div class="alberta-person-square cond1" id="s1573"></div>
+<div class="alberta-person-square cond1" id="s1574"></div>
+<div class="alberta-person-square cond1" id="s1575"></div>
+<div class="alberta-person-square cond1" id="s1576"></div>
+<div class="alberta-person-square cond1" id="s1577"></div>
+<div class="alberta-person-square cond1" id="s1578"></div>
+<div class="alberta-person-square cond1" id="s1579"></div>
+<div class="alberta-person-square cond1" id="s1580"></div>
+<div class="alberta-person-square cond1" id="s1581"></div>
+<div class="alberta-person-square cond1" id="s1582"></div>
+<div class="alberta-person-square cond1" id="s1583"></div>
+<div class="alberta-person-square cond1" id="s1584"></div>
+<div class="alberta-person-square cond1" id="s1585"></div>
+<div class="alberta-person-square cond1" id="s1586"></div>
+<div class="alberta-person-square cond1" id="s1587"></div>
+<div class="alberta-person-square cond1" id="s1588"></div>
+<div class="alberta-person-square cond1" id="s1589"></div>
+<div class="alberta-person-square cond1" id="s1590"></div>
+<div class="alberta-person-square cond1" id="s1591"></div>
+<div class="alberta-person-square cond1" id="s1592"></div>
+<div class="alberta-person-square cond1" id="s1593"></div>
+<div class="alberta-person-square cond1" id="s1594"></div>
+<div class="alberta-person-square cond1" id="s1595"></div>
+<div class="alberta-person-square cond1" id="s1596"></div>
+<div class="alberta-person-square cond1" id="s1597"></div>
+<div class="alberta-person-square cond1" id="s1598"></div>
+<div class="alberta-person-square cond1" id="s1599"></div>
+<div class="alberta-person-square cond1" id="s1600"></div>
+<div class="alberta-person-square cond1" id="s1601"></div>
+<div class="alberta-person-square cond1" id="s1602"></div>
+<div class="alberta-person-square cond1" id="s1603"></div>
+<div class="alberta-person-square cond1" id="s1604"></div>
+<div class="alberta-person-square cond1" id="s1605"></div>
+<div class="alberta-person-square cond1" id="s1606"></div>
+<div class="alberta-person-square cond1" id="s1607"></div>
+<div class="alberta-person-square cond1" id="s1608"></div>
+<div class="alberta-person-square cond1" id="s1609"></div>
+<div class="alberta-person-square cond1" id="s1610"></div>
+<div class="alberta-person-square cond1" id="s1611"></div>
+<div class="alberta-person-square cond1" id="s1612"></div>
+<div class="alberta-person-square cond1" id="s1613"></div>
+<div class="alberta-person-square cond1" id="s1614"></div>
+<div class="alberta-person-square cond1" id="s1615"></div>
+<div class="alberta-person-square cond1" id="s1616"></div>
+<div class="alberta-person-square cond1" id="s1617"></div>
+<div class="alberta-person-square cond1" id="s1618"></div>
+<div class="alberta-person-square cond1" id="s1619"></div>
+<div class="alberta-person-square cond1" id="s1620"></div>
+<div class="alberta-person-square cond1" id="s1621"></div>
+<div class="alberta-person-square cond1" id="s1622"></div>
+<div class="alberta-person-square cond1" id="s1623"></div>
+<div class="alberta-person-square cond1" id="s1624"></div>
+<div class="alberta-person-square cond1" id="s1625"></div>
+
+
+                    </div>
+                    <div class="albertacount-graphic-legend">
+                        <div class="albertacount-graphic-legend-item" data-legend-item="cond1" style="height: 500px; margin-bottom: 2px;">
+                            <div class="albertacount-graphic-legend-item-text">This represents Edmonton' population size</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<script>
+
+
+var age = [101,85,85,98,136,151,131,115,112,120,121,102,79,53,43,37,30,27, "zerotofouryears","fivetonineyears","tentofourteenyears","fifteentonineteenyears","twentytotwentyfouryears","twentyfivetotwentynineyears","thritytothirtyfouryears","thirtyfivetothirtynineyears","fortytofortyfouryears","fortyfivetofortynineyears","fiftytofiftyfouryears","fiftyfivetofiftynineyears","sixtytosixtyfouryears","sixtyfivetosixtynineyears","seventytoseventyfouryears","seventyfivetoseventynineyears","eightytoeightyfouryears","eightyfiveyearsandover"]
+
+var votes = [264,82,66,5,4,3,2,1316, "doniveson", "karenleibovivi", "kerrydiotte", "joshsemotiuk", "gordonward", "kristineacielo", "undervotes","didntvote"]
+
+function changeer(x)
+	{
+		//console.log(x);
+		var holder = 0;
+		var holderlegend = 0;
+		var arraylength = x.length/2;
+		//console.log(arraylength);
+		//create a for loop for the total number of items in an array
+		for (var i=0;i<arraylength;i++)
+		{
+			//console.log(i);
+			var dude = x[i];
+			//console.log(dude);
+
+			var xxx = x[i+arraylength];
+			//console.log(xxx);
+
+				for (j=1;j<=dude;j++)
+				{
+					holder ++;
+					//console.log(holder);
+					$( "#s"+holder ).removeClass(); // removes all classes
+					$( "#s"+holder ).addClass( "alberta-person-square "); //REQUIRED TO KEEP SQUARE SHAPE
+					$( "#s"+holder ).addClass( xxx );
+				}
+
+		}
+
+	}
+
+
+function ageLegend()
+{
+	document.getElementById('agelegenddiv').style.display = 'block';
+	document.getElementById('votinglegenddiv').style.display = 'none';
+	document.getElementById('genderlegenddiv').style.display = 'none';
+}
+
+function voteLegend()
+{
+	document.getElementById('votinglegenddiv').style.display = 'block';
+	document.getElementById('agelegenddiv').style.display = 'none';
+	document.getElementById('genderlegenddiv').style.display = 'none';
+}
+
+function genderLegend()
+{
+	document.getElementById('genderlegenddiv').style.display = 'block';
+	document.getElementById('votinglegenddiv').style.display = 'none';
+	document.getElementById('agelegenddiv').style.display = 'none';
+}
+
+</script>
+
+<div style="clear:both;"></div>
+<button class="btn" onclick="changeer(age); ageLegend();">Age</button>
+<button class="btn" onclick="changeer(votes); voteLegend();">Election results</button>
+<div id="agelegenddiv">
+<table>
+<tr style="width:100%;"><td style=" width: 12px; height 12px; background-color:#1f77b4"><td>0 to 4 years</td><td style=" width: 12px; height 12px; background-color:#aec7e8"><td>5 to 9 years</td><td style=" width: 12px; height 12px; background-color:#ff7f0e"><td>10 to 14 years</td><td style=" width: 12px; height 12px; background-color:#ffbb78"><td>15 to 19 years</td><td style=" width: 12px; height 12px; background-color:#2ca02c"><td>20 to 24 years</td></tr>
+<tr><td style=" width: 12px; height 12px; background-color:#98df8a"><td>25 to 29 years</td><td style=" width: 12px; height 12px; background-color:#d62728"><td>30 to 34 years</td><td style=" width: 12px; height 12px; background-color:#ff9896"><td>35 to 39 years</td><td style=" width: 12px; height 12px; background-color:#9467bd"><td>40 to 44 years</td><td style=" width: 12px; height 12px; background-color:#c5b0d5"><td>45 to 49 years</td></tr>
+<tr><td style=" width: 12px; height 12px; background-color:#8c564b"><td>50 to 54 years</td><td style=" width: 12px; height 12px; background-color:#c49c94"><td>55 to 59 years</td><td style=" width: 12px; height 12px; background-color:#e377c2"><td>60 to 64 years</td><td style=" width: 12px; height 12px; background-color:#f7b6d2"><td>65 to 69 years</td><td style=" width: 12px; height 12px; background-color:#7f7f7f"><td>70 to 74 years</td></tr><td style=" width: 12px; height 12px; background-color:#c7c7c7"><td>75 to 79 years</td><td style=" width: 12px; height 12px; background-color:#bcbd22"><td>80 to 84 years</td><td style=" width: 12px; height 12px; background-color:#dbdb8d"><td>85 years and over</td></tr>
+</table>
+</div>
+
+<div id="votinglegenddiv">
+<table>
+<tr><td style=" width: 12px; height 12px; background-color:#1f77b4"><td>Don Iveson</td><td style=" width: 12px; height 12px; background-color:#aec7e8"><td>Karen Leibovivi</td><td style=" width: 12px; height 12px; background-color:#ff7f0e"><td>Kerry Diotte</td><td style=" width: 12px; height 12px; background-color:#ffbb78"><td>Josh Semotiuk</td>
+<tr><td style=" width: 12px; height 12px; background-color:#2ca02c"><td>Gordon Ward</td><td style=" width: 12px; height 12px; background-color:#98df8a"><td>Kristine Acielos</td><td style=" width: 12px; height 12px; background-color:#d62728"><td>Undervotes</td><td style=" width: 12px; height 12px; background-color:#ff9896"><td>Didn't vote</td></tr>
+</table>
+</div>
+
+<div id="genderlegenddiv">
+<table>
+<tr><td style=" width: 12px; height 12px; background-color:#1f77b4"><td>Female</td></tr>
+<tr><td style=" width: 12px; height 12px; background-color:#aec7e8"><td>Male</td></tr>
+<tr><td style=" width: 12px; height 12px; background-color:#ff7f0e"><td>No response</td></tr>
+</table>
+</div>
+</body>
+</html>
