@@ -1,580 +1,7 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-<style>
-* {
-		font-family: 'Open Sans', sans-serif;
-}
-#agelegenddiv  {
-	display: none;
-}
-
-#votinglegenddiv {
-	display: none;
-}
-
-#genderlegenddiv {
-	display: none;
-}
-
-.albertacount-text-block{
-	font-family: 'Open Sans', sans-serif;
-	font-size: 14px;
-	width: 100%;
-	float: left;
-	margin: 0 auto;
-}
-.albertacount-text-block p{
-	color: #3f4245 !important;
-	width: 75% !important;
-	margin: 0 auto !important;
-	float: none !important;
-}
-
-.albertacount-breakdown-wrapper{
-	width: 75%;
-	margin: 30px auto 0 auto;
-}
-.albertacount-30k-people{
-	width: 562px;
-	float: left;
-	top: 5px;
-	position: relative;
-}
-.albertacount-graphic-legend{
-	float: left;
-	padding-left: 10px;
-}
-.albertacount-graphic-legend-mobile{
-	display: none;
-}
-.albertacount-graphic-legend-item{
-	border-left: 2px solid #666;
-	width: 20px;
-	overflow:visible;
-	position: relative;
-	opacity: 0;
-}
-.albertacount-graphic-legend-item-text{
-	font-size: 12px;
-	font-family: 'Open Sans', sans-serif;
-	display: inline-block;
-	width: 200px;
-	position: relative;
-	margin-left: 10px;
-	top: 39%;
-	color:#3f4245;
-}
-.alberta-person-square{
-	background-color: #C2C2C2;
-	width: 12px;
-	display: inline-block;
-	float:right;
-	height: 12px;
-	margin: 0 1px 1px 0;
-}
-
-.ajmint-icon-for-legend.alberta-person-square{
-	background-color: #666;
-	display: inline-block;
-	float: none;
-}
-
-#squareboxes .cond1,
-#squareboxes.active .albertacount-graphic-legend-item[data-legend-item="cond1"]{
-  -webkit-transition: all .5s ease-in;
-	-moz-transition: all .5s ease-in;
-	-o-transition: all .5s ease-in;
-	transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
-	-moz-transition-delay: .5s;
-	-o-transition-delay: .5s;
-	transition-delay: .5s;
-}
-#squareboxes .cond2,
-#squareboxes.active .albertacount-graphic-legend-item[data-legend-item="cond2"]{
-  -webkit-transition: all .5s ease-in;
-	-moz-transition: all .5s ease-in;
-	-o-transition: all .5s ease-in;
-	transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
-	-moz-transition-delay: .5s;
-	-o-transition-delay: .5s;
-	transition-delay: .5s;
-}
-#squareboxes .cond3,
-#squareboxes.active .albertacount-graphic-legend-item[data-legend-item="cond3"]{
-  -webkit-transition: all .5s ease-in;
-	-moz-transition: all .5s ease-in;
-	-o-transition: all .5s ease-in;
-	transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
-	-moz-transition-delay: .5s;
-	-o-transition-delay: .5s;
-	transition-delay: .5s;
-}
-#squareboxes.active .albertacount-graphic-legend-item[data-legend-item="cond1"],
-#squareboxes.active .albertacount-graphic-legend-item[data-legend-item="cond2"],
-#squareboxes.active .albertacount-graphic-legend-item[data-legend-item="cond3"]{
-	opacity: 1;
-}
-
-
-/* COLORS TO CHANGE */
-/* Eligible poeple */
-
-
-#squareboxes.active .cond1{
-	color:white;
-	background-color: #2980b9;
-}
-#squareboxes.active .albertacount-graphic-legend-item[data-legend-item="cond1"]{
-	border-color: #2980b9;
-}
-
-/* Ineligible poeple */
-#squareboxes.active .cond2{
-	color:white;
-	background-color: #27ae60;
-}
-#squareboxes.active .albertacount-graphic-legend-item[data-legend-item="cond2"]{
-	border-color: #27ae60;
-}
-
-/* Remaining poeple */
-#squareboxes.active .cond3{
-	color:white;
-	background-color: #c0392b;
-}
-#squareboxes.active .albertacount-graphic-legend-item[data-legend-item="cond3"]{
-	border-color: #c0392b;
-}
-
-
-#squareboxes.active .zerotofouryears{
-color:white;
-background-color:#1f77b4;
-  -webkit-transition: all .5s ease-in;
--moz-transition: all .5s ease-in;
--o-transition: all .5s ease-in;
-transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
--moz-transition-delay: .5s;
--o-transition-delay: .5s;
-transition-delay: .5s;
-}
-
-#squareboxes.active .fivetonineyears{
-color:white;
-background-color:#aec7e8;
-  -webkit-transition: all .5s ease-in;
--moz-transition: all .5s ease-in;
--o-transition: all .5s ease-in;
-transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
--moz-transition-delay: .5s;
--o-transition-delay: .5s;
-transition-delay: .5s;
-}
-
-#squareboxes.active .tentofourteenyears{
-color:white;
-background-color:#ff7f0e;
-  -webkit-transition: all .5s ease-in;
--moz-transition: all .5s ease-in;
--o-transition: all .5s ease-in;
-transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
--moz-transition-delay: .5s;
--o-transition-delay: .5s;
-transition-delay: .5s;
-}
-
-#squareboxes.active .fifteentonineteenyears{
-color:white;
-background-color:#ffbb78;
-  -webkit-transition: all .5s ease-in;
--moz-transition: all .5s ease-in;
--o-transition: all .5s ease-in;
-transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
--moz-transition-delay: .5s;
--o-transition-delay: .5s;
-transition-delay: .5s;
-}
-
-#squareboxes.active .twentytotwentyfouryears{
-color:white;
-background-color:#2ca02c;
-  -webkit-transition: all .5s ease-in;
--moz-transition: all .5s ease-in;
--o-transition: all .5s ease-in;
-transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
--moz-transition-delay: .5s;
--o-transition-delay: .5s;
-transition-delay: .5s;
-}
-
-#squareboxes.active .twentyfivetotwentynineyears{
-color:white;
-background-color:#98df8a;
-  -webkit-transition: all .5s ease-in;
--moz-transition: all .5s ease-in;
--o-transition: all .5s ease-in;
-transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
--moz-transition-delay: .5s;
--o-transition-delay: .5s;
-transition-delay: .5s;
-}
-
-#squareboxes.active .thritytothirtyfouryears{
-color:white;
-background-color:#d62728;
-  -webkit-transition: all .5s ease-in;
--moz-transition: all .5s ease-in;
--o-transition: all .5s ease-in;
-transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
--moz-transition-delay: .5s;
--o-transition-delay: .5s;
-transition-delay: .5s;
-}
-
-#squareboxes.active .thirtyfivetothirtynineyears{
-color:white;
-background-color:#ff9896;
-  -webkit-transition: all .5s ease-in;
--moz-transition: all .5s ease-in;
--o-transition: all .5s ease-in;
-transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
--moz-transition-delay: .5s;
--o-transition-delay: .5s;
-transition-delay: .5s;
-}
-
-#squareboxes.active .fortytofortyfouryears{
-color:white;
-background-color:#9467bd;
-  -webkit-transition: all .5s ease-in;
--moz-transition: all .5s ease-in;
--o-transition: all .5s ease-in;
-transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
--moz-transition-delay: .5s;
--o-transition-delay: .5s;
-transition-delay: .5s;
-}
-
-#squareboxes.active .fortyfivetofortynineyears{
-color:white;
-background-color:#c5b0d5;
-  -webkit-transition: all .5s ease-in;
--moz-transition: all .5s ease-in;
--o-transition: all .5s ease-in;
-transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
--moz-transition-delay: .5s;
--o-transition-delay: .5s;
-transition-delay: .5s;
-}
-
-#squareboxes.active .fiftytofiftyfouryears{
-color:white;
-background-color:#8c564b;
-  -webkit-transition: all .5s ease-in;
--moz-transition: all .5s ease-in;
--o-transition: all .5s ease-in;
-transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
--moz-transition-delay: .5s;
--o-transition-delay: .5s;
-transition-delay: .5s;
-}
-
-#squareboxes.active .fiftyfivetofiftynineyears{
-color:white;
-background-color:#c49c94;
-  -webkit-transition: all .5s ease-in;
--moz-transition: all .5s ease-in;
--o-transition: all .5s ease-in;
-transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
--moz-transition-delay: .5s;
--o-transition-delay: .5s;
-transition-delay: .5s;
-}
-
-#squareboxes.active .sixtytosixtyfouryears{
-color:white;
-background-color:#e377c2;
-  -webkit-transition: all .5s ease-in;
--moz-transition: all .5s ease-in;
--o-transition: all .5s ease-in;
-transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
--moz-transition-delay: .5s;
--o-transition-delay: .5s;
-transition-delay: .5s;
-}
-
-#squareboxes.active .sixtyfivetosixtynineyears{
-color:white;
-background-color:#f7b6d2;
-  -webkit-transition: all .5s ease-in;
--moz-transition: all .5s ease-in;
--o-transition: all .5s ease-in;
-transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
--moz-transition-delay: .5s;
--o-transition-delay: .5s;
-transition-delay: .5s;
-}
-
-#squareboxes.active .seventytoseventyfouryears{
-color:white;
-background-color:#7f7f7f;
-  -webkit-transition: all .5s ease-in;
--moz-transition: all .5s ease-in;
--o-transition: all .5s ease-in;
-transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
--moz-transition-delay: .5s;
--o-transition-delay: .5s;
-transition-delay: .5s;
-}
-
-#squareboxes.active .seventyfivetoseventynineyears{
-color:white;
-background-color:#c7c7c7;
-  -webkit-transition: all .5s ease-in;
--moz-transition: all .5s ease-in;
--o-transition: all .5s ease-in;
-transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
--moz-transition-delay: .5s;
--o-transition-delay: .5s;
-transition-delay: .5s;
-}
-
-#squareboxes.active .eightytoeightyfouryears{
-color:white;
-background-color:#bcbd22;
-  -webkit-transition: all .5s ease-in;
--moz-transition: all .5s ease-in;
--o-transition: all .5s ease-in;
-transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
--moz-transition-delay: .5s;
--o-transition-delay: .5s;
-transition-delay: .5s;
-}
-
-#squareboxes.active .eightyfiveyearsandover{
-color:white;
-background-color:#dbdb8d;
-  -webkit-transition: all .5s ease-in;
--moz-transition: all .5s ease-in;
--o-transition: all .5s ease-in;
-transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
--moz-transition-delay: .5s;
--o-transition-delay: .5s;
-transition-delay: .5s;
-}
-
-
-/* SET STYLERS FOR SELECTIONS HERE */
-
-
-
-#squareboxes.active .doniveson{
-color:white;
-background-color:#1f77b4;
-  -webkit-transition: all .5s ease-in;
--moz-transition: all .5s ease-in;
--o-transition: all .5s ease-in;
-transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
--moz-transition-delay: .5s;
--o-transition-delay: .5s;
-transition-delay: .5s;
-}
-
-#squareboxes.active .karenleibovivi{
-color:white;
-background-color:#aec7e8;
-  -webkit-transition: all .5s ease-in;
--moz-transition: all .5s ease-in;
--o-transition: all .5s ease-in;
-transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
--moz-transition-delay: .5s;
--o-transition-delay: .5s;
-transition-delay: .5s;
-}
-
-#squareboxes.active .kerrydiotte{
-color:white;
-background-color:#ff7f0e;
-  -webkit-transition: all .5s ease-in;
--moz-transition: all .5s ease-in;
--o-transition: all .5s ease-in;
-transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
--moz-transition-delay: .5s;
--o-transition-delay: .5s;
-transition-delay: .5s;
-}
-
-#squareboxes.active .joshsemotiuk{
-color:white;
-background-color:#ffbb78;
-  -webkit-transition: all .5s ease-in;
--moz-transition: all .5s ease-in;
--o-transition: all .5s ease-in;
-transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
--moz-transition-delay: .5s;
--o-transition-delay: .5s;
-transition-delay: .5s;
-}
-
-#squareboxes.active .gordonward{
-color:white;
-background-color:#2ca02c;
-  -webkit-transition: all .5s ease-in;
--moz-transition: all .5s ease-in;
--o-transition: all .5s ease-in;
-transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
--moz-transition-delay: .5s;
--o-transition-delay: .5s;
-transition-delay: .5s;
-}
-
-#squareboxes.active .kristineacielo{
-color:white;
-background-color:#98df8a;
-  -webkit-transition: all .5s ease-in;
--moz-transition: all .5s ease-in;
--o-transition: all .5s ease-in;
-transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
--moz-transition-delay: .5s;
--o-transition-delay: .5s;
-transition-delay: .5s;
-}
-
-#squareboxes.active .undervotes{
-color:white;
-background-color:#d62728;
-  -webkit-transition: all .5s ease-in;
--moz-transition: all .5s ease-in;
--o-transition: all .5s ease-in;
-transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
--moz-transition-delay: .5s;
--o-transition-delay: .5s;
-transition-delay: .5s;
-}
-
-#squareboxes.active .didntvote{
-color:white;
-background-color:#ff9896;
-  -webkit-transition: all .5s ease-in;
--moz-transition: all .5s ease-in;
--o-transition: all .5s ease-in;
-transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
--moz-transition-delay: .5s;
--o-transition-delay: .5s;
-transition-delay: .5s;
-}
-
-@-webkit-keyframes pulse_animation {
-	0% { -webkit-transform: scale(1.7); }
-	30% { -webkit-transform: scale(1.6); }
-	40% { -webkit-transform: scale(1.5); }
-	50% { -webkit-transform: scale(1.4); }
-	60% { -webkit-transform: scale(1.3); }
-	70% { -webkit-transform: scale(1.2); }
-	80% { -webkit-transform: scale(1.1); }
-	100% { -webkit-transform: scale(1); }
-}
-
-@-webkit-keyframes spin_animation {
-	0% { -webkit-transform: rotateX(0deg); }
-	0% { -webkit-transform: rotateX(18deg); }
-	0% { -webkit-transform: rotateX(38deg); }
-	30% { -webkit-transform: rotateX(54deg); }
-	40% { -webkit-transform: rotateX(72deg); }
-	50% { -webkit-transform: rotateX(90deg); }
-	60% { -webkit-transform: rotateX(108deg); }
-	70% { -webkit-transform: rotateX(126deg); }
-	80% { -webkit-transform: rotateX(144deg); }
-	0% { -webkit-transform: rotateX(162deg); }
-	100% { -webkit-transform: rotateX(180deg); }
-}
-
-
-#squareboxes.active .test1{
-	color:white;
-	background-color: blue;
-  -webkit-transition: all .5s ease-in;
-	-moz-transition: all .5s ease-in;
-	-o-transition: all .5s ease-in;
-	transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
-	-moz-transition-delay: .5s;
-	-o-transition-delay: .5s;
-	transition-delay: .5s;
-}
-#squareboxes.active .test2{
-	color:white;
-	background-color: #34495e;
-  -webkit-transition: all .5s ease-in;
-	-moz-transition: all .5s ease-in;
-	-o-transition: all .5s ease-in;
-	transition: all .5s ease-in;
-  -webkit-transition-delay: .5s;
-	-moz-transition-delay: .5s;
-	-o-transition-delay: .5s;
-	transition-delay: .5s;
-}
-
-.btn {
-  background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
-  border-radius: 28px;
-  font-family: 'Open Sans', sans-serif;
-  color: #ffffff;
-  font-size: 20px;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
-  border: none;
-}
-
-.btn:hover {
-  background: #3cb0fd;
-  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
-  text-decoration: none;
-}
-
-
-</style>
+<link href='style.css' rel='stylesheet' type='text/css'>
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <body>
 <div id="squareboxes" class="active" style="z-index: 197;">
@@ -2225,6 +1652,12 @@ var age = [101,85,85,98,136,151,131,115,112,120,121,102,79,53,43,37,30,27, "zero
 
 var votes = [264,82,66,5,4,3,2,1316, "doniveson", "karenleibovivi", "kerrydiotte", "joshsemotiuk", "gordonward", "kristineacielo", "undervotes","didntvote"]
 
+var neighbourhoods = [36,23,18,18,15,14,1602,"oliver","downtown","garneau","strathcona","wildhorse","boylestreet","otherneighbhourhoods"]
+
+var gender = [792,811,22,"female","male","noresponse"]
+
+var marriage =[568,88,94,608,51,216,"married","commonlaw","separatedordivorced","nevermarried","widowed","noresponsem"]
+
 function changeer(x)
 	{
 		//console.log(x);
@@ -2255,26 +1688,43 @@ function changeer(x)
 
 	}
 
+function hideLegends() {
+	document.getElementById('agelegenddiv').style.display = 'none';
+	document.getElementById('votinglegenddiv').style.display = 'none';
+	document.getElementById('genderlegenddiv').style.display = 'none';
+	document.getElementById('marriagelegenddiv').style.display = 'none';
+	document.getElementById('neighbourhoodlegenddiv').style.display = 'none';
+}
 
 function ageLegend()
 {
+	hideLegends();
 	document.getElementById('agelegenddiv').style.display = 'block';
-	document.getElementById('votinglegenddiv').style.display = 'none';
-	document.getElementById('genderlegenddiv').style.display = 'none';
 }
 
 function voteLegend()
 {
+	hideLegends();
 	document.getElementById('votinglegenddiv').style.display = 'block';
-	document.getElementById('agelegenddiv').style.display = 'none';
-	document.getElementById('genderlegenddiv').style.display = 'none';
 }
 
 function genderLegend()
 {
+	hideLegends();
 	document.getElementById('genderlegenddiv').style.display = 'block';
-	document.getElementById('votinglegenddiv').style.display = 'none';
-	document.getElementById('agelegenddiv').style.display = 'none';
+}
+
+function marriageLegend()
+{
+	hideLegends();
+	document.getElementById('marriagelegenddiv').style.display = 'block';
+
+}
+
+function neighbourhoodLegend()
+{
+	hideLegends();
+	document.getElementById('neighbourhoodlegenddiv').style.display = 'block';
 }
 
 </script>
@@ -2282,6 +1732,9 @@ function genderLegend()
 <div style="clear:both;"></div>
 <button class="btn" onclick="changeer(age); ageLegend();">Age</button>
 <button class="btn" onclick="changeer(votes); voteLegend();">Election results</button>
+<button class="btn" onclick="changeer(gender); genderLegend();">Gender</button>
+<button class="btn" onclick="changeer(marriage); marriageLegend();">Marriage</button>
+<button class="btn" onclick="changeer(neighbourhoods); neighbourhoodLegend();">Neighbourhoods</button>
 <div id="agelegenddiv">
 <table>
 <tr style="width:100%;"><td style=" width: 12px; height 12px; background-color:#1f77b4"><td>0 to 4 years</td><td style=" width: 12px; height 12px; background-color:#aec7e8"><td>5 to 9 years</td><td style=" width: 12px; height 12px; background-color:#ff7f0e"><td>10 to 14 years</td><td style=" width: 12px; height 12px; background-color:#ffbb78"><td>15 to 19 years</td><td style=" width: 12px; height 12px; background-color:#2ca02c"><td>20 to 24 years</td></tr>
@@ -2304,5 +1757,31 @@ function genderLegend()
 <tr><td style=" width: 12px; height 12px; background-color:#ff7f0e"><td>No response</td></tr>
 </table>
 </div>
+
+<div id="marriagelegenddiv">
+<table>
+<tr><td style=" width: 12px; height 12px; background-color:#1f77b4"><td>Married</td></tr>
+<tr><td style=" width: 12px; height 12px; background-color:#aec7e8"><td>Common Law</td></tr>
+<tr><td style=" width: 12px; height 12px; background-color:#ff7f0e"><td>Separated or Divorced</td></tr>
+<tr><td style=" width: 12px; height 12px; background-color:#ffbb78"><td>Never married</td></tr>
+<tr><td style=" width: 12px; height 12px; background-color:#2ca02c"><td>Widowed</td></tr>
+<tr><td style=" width: 12px; height 12px; background-color:#98df8a"><td>No response</td></tr>
+</table>
+
+</div>
+
+<div id="neighbourhoodlegenddiv">
+<table>
+<tr><td style=" width: 12px; height 12px; background-color:#1f77b4"><td>Oliver</td></tr>
+<tr><td style=" width: 12px; height 12px; background-color:#aec7e8"><td>Downtown</td></tr>
+<tr><td style=" width: 12px; height 12px; background-color:#ff7f0e"><td>Garneau</td></tr>
+<tr><td style=" width: 12px; height 12px; background-color:#ffbb78"><td>Strathcona</td></tr>
+<tr><td style=" width: 12px; height 12px; background-color:#2ca02c"><td>Wildhorse</td></tr>
+<tr><td style=" width: 12px; height 12px; background-color:#98df8a"><td>Boyle Street</td></tr>
+<tr><td style=" width: 12px; height 12px; background-color:#d62728"><td>Other neighbourhoods</td></tr>
+</table>
+</div>
+
+
 </body>
 </html>
